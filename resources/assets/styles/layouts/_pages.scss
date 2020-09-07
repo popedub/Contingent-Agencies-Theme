@@ -40,6 +40,7 @@ body.home {
   height: 40vw;
   display: block;
   position: absolute;
+  top: 90px;
   left: 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,4 +48,35 @@ body.home {
 
 .intro-home {
   padding-top: calc(40vw + 40px); //altura de la foto home + algo de padding
+}
+
+//notation and reflections
+.list-group-item {
+  padding: 0.25rem;
+  background-color: transparent;
+  border-top: 1px dotted black;
+  border-bottom: 1px dotted black;
+  border-right: none;
+  border-left: none;
+  text-align: center;
+}
+
+.list-group-horizontal .list-group-item:first-child {
+  border-left: 1px dotted black;
+  text-align: left;
+}
+
+.list-group-horizontal .list-group-item:last-child {
+  border-right: 1px dotted black;
+  text-align: right;
+}
+
+.list-group-horizontal .list-group-item:first-child,
+.list-group-horizontal .list-group-item:last-child {
+  border-radius: 0;
+}
+
+.dot {
+  border-bottom: 2px dotted black;
+  margin-bottom: 8px;
 }

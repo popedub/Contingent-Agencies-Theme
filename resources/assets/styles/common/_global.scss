@@ -13,8 +13,23 @@ html {
 
 body {
   background-color: $gris;
+  padding: 15px;
 }
 
 .link-white {
   color: white;
+}
+
+.wrap {
+  @include media-breakpoint-up(lg) {
+    margin-top: 90px;
+  }
+}
+
+body.page-template-template-notations-reflections {
+  .content {
+    @include media-breakpoint-up(lg) {
+      padding-top: 90px;
+    }
+  }
 }

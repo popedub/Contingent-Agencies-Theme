@@ -1,3 +1,4 @@
+const feather = require('feather-icons')
 export default {
   init() {
     // JavaScript to be fired on all pages
@@ -13,6 +14,7 @@ export default {
         $('.overlay-slidedown').toggleClass('open');
         $('body').css('overflow', 'auto');
       })
+      feather.replace()
     });
   },
 
