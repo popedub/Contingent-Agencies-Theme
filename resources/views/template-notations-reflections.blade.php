@@ -6,8 +6,11 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
+    <div class="intro">
+      @include('partials.content-page')
 
-    @include('partials.content-page')<span class="read-more">→ </span><a href="" >{{ __('Read more', 'contingentagenciestheme') }}</a>
+    </div>
+
   @endwhile
 
   {{-- aquí hay q llamar al contenido vía API --}}
@@ -64,4 +67,8 @@
     </div>
     </ul>
   </div>
+
+<button class="btn btn-outline-dark mt-5 ml-auto mr-auto d-block">
+  {{ __('Load more', 'contingentagenciestheme') }}
+</button>
 @endsection

@@ -13,7 +13,7 @@ export default {
       })
 
       var btn = document.getElementById('artifacts');
-      var btn2 = document.getElementById('identifiers');
+      var btn2 = document.getElementById('cell-name');
       btn.addEventListener('click', function () {
         $(this).preventDefault;
         $('.grid-list').removeClass('d-block').addClass('d-none');

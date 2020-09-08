@@ -1,6 +1,9 @@
 <header class="banner">
   <div class="container-fluid d-flex align-content-center justify-content-center">
     <a class="brand" href="{{ home_url('/') }}">{{ get_bloginfo('name', 'display') }}</a>
+    @if (!is_front_page())
+      @include('partials.page-header')
+    @endif
     <a id="menu" class="btn-menu">@svg('ico-menu', 'ico-menu')</a>
   </div>
 </header>

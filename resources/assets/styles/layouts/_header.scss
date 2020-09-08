@@ -1,6 +1,31 @@
 .brand {
   @include media-breakpoint-up(lg) {
     align-self: center;
+    font-size: 1.2rem;
+    padding-left: 15px;
+  }
+}
+
+.page-header {
+  text-transform: lowercase;
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+      font-weight: 400;
+    }
+  }
+}
+
+body.home .brand {
+  @include media-breakpoint-up(lg) {
+    align-self: center;
     font-size: 2rem;
     margin-left: auto;
   }
@@ -247,7 +272,7 @@
   color: white;
 }
 
-#menu-bottom-menu a{
+#menu-bottom-menu a {
   color: $negro;
 }
 

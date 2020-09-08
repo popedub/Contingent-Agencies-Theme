@@ -76,6 +76,15 @@ body.home {
   border-radius: 0;
 }
 
+.intro {
+  padding-top: 30px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+}
+
 .dot {
   border-bottom: 2px dotted black;
   margin-bottom: 8px;
