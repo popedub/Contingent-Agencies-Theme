@@ -22,7 +22,7 @@ body {
 
 .wrap {
   @include media-breakpoint-up(lg) {
-    margin-top: 90px;
+    margin-top: 75px;
   }
 }
 
@@ -32,4 +32,8 @@ body.page-template-template-notations-reflections {
       padding-top: 90px;
     }
   }
+}
+
+body.single {
+  background-color: #222;
 }

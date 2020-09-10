@@ -6,6 +6,8 @@ use Sober\Controller\Controller;
 
 class App extends Controller
 {
+    protected $acf = true;
+
     public function siteName()
     {
         return get_bloginfo('name');
@@ -20,8 +22,11 @@ class App extends Controller
             return __('Latest Posts', 'sage');
         }
         if (is_archive()) {
-            return get_the_archive_title();
+            if (is_category()) {
+                return single_cat_title( '', false );
+            } else return get_the_archive_title();
         }
+
         if (is_search()) {
             return sprintf(__('Search Results for %s', 'sage'), get_search_query());
         }

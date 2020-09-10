@@ -1,9 +1,8 @@
 export default {
   init() {
-    // JavaScript to be fired on the home page
-    $(document).ready(function(){
+    $(document).ready(function () {
       var $grid = $('.grid').masonry({
-        itemSelector: '.post-home',
+        itemSelector: 'article',
         columnWidth: '.grid-sizer',
         percentPosition: true,
       })
@@ -11,9 +10,5 @@ export default {
         $grid.masonry('layout');
       })
     })
-
-  },
-  finalize() {
-    // JavaScript to be fired on the home page, after the init JS
   },
 };

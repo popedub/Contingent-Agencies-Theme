@@ -1,0 +1,62 @@
+//events
+body.category {
+  .grid {
+    @include media-breakpoint-up(lg) {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+  }
+
+  article {
+    @extend .col-12;
+    @extend .col-lg-6;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 15px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .entry-title,
+  .entry-summary {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+body.single {
+  article {
+    @extend .row;
+
+    background-color: $gris;
+    margin-left: -30px;
+    margin-right: -30px;
+
+    header {
+      padding-top: 100px;
+    }
+  }
+
+  .date {
+    @include media-breakpoint-up(lg) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .quote {
+    @include media-breakpoint-up(lg) {
+      padding-right: 30%;
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+  }
+
+  article.event-completed {
+    margin-left: -30px;
+    margin-right: -30px;
+    padding-top: 50px;
+    color: white;
+    background-color: #222;
+  }
+}

@@ -1,9 +1,15 @@
-<article @php post_class() @endphp>
+<article @php (post_class()) @endphp>
   <header>
-    <h2 class="entry-title"><a href="{{ get_permalink() }}">{!! get_the_title() !!}</a></h2>
-    @include('partials/entry-meta')
+    @if (has_post_thumbnail())
+      {{ the_post_thumbnail('full', array('class'=>'img-fluid')) }}
+    @endif
+    <h2 class="entry-title mt-3"><a href="{{ get_permalink() }}">{!! get_the_title() !!}</a></h2>
   </header>
   <div class="entry-summary">
-    @php the_excerpt() @endphp
+    @php
+    $intro = get_field('intro')
+    @endphp
+    {!! $intro !!}
+
   </div>
 </article>

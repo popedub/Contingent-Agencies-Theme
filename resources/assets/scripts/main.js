@@ -15,6 +15,7 @@ import aboutUs from './routes/about';
 import notationsReflections from './routes/notations-reflections';
 import things from './routes/things';
 import researchCells from './routes/research-cells';
+import category from './routes/category';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -27,6 +28,7 @@ const routes = new Router({
   notationsReflections,
   things,
   researchCells,
+  category,
 });
 
 // Load Events

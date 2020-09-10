@@ -89,3 +89,24 @@ body.home {
   border-bottom: 2px dotted black;
   margin-bottom: 8px;
 }
+
+//concepatual framework
+
+.title-conceptual {
+  &::before {
+    content: "→";
+  }
+}
+
+ul.list {
+  padding-inline-start: 0;
+
+  li {
+    &::before {
+      content: "\25CF";
+      display: inline-block;
+      font-size: 0.35rem;
+      margin-right: 15px;
+    }
+  }
+}
