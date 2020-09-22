@@ -16,6 +16,7 @@ import notationsReflections from './routes/notations-reflections';
 import things from './routes/things';
 import researchCells from './routes/research-cells';
 import category from './routes/category';
+import architectureAndAtmosphere from './routes/architecture-and-atmosphere';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -29,6 +30,7 @@ const routes = new Router({
   things,
   researchCells,
   category,
+  architectureAndAtmosphere,
 });
 
 // Load Events

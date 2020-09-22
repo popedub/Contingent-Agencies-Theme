@@ -60,3 +60,41 @@ body.single {
     background-color: #222;
   }
 }
+
+//notation
+
+body.template-notation,
+body.template-researchers-single {
+  section.gris {
+    background-color: $gris;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: -30px;
+      margin-left: -30px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+
+  .dark {
+    color: white;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .main {
+    a {
+      border-bottom: 1px solid black;
+      transition: border-bottom 0.3s ease-in-out;
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}

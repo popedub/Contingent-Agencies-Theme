@@ -17,7 +17,7 @@
     <ul class="list">
       @for ($i = 0; $i < 2; $i++)
       <li class="d-flex justify-content-between align-items-center">
-        <span class="id pr-3">Nikolaus Gansterer</span>
+        <a href="{{ get_permalink(95) }}"><span class="id pr-3">Nikolaus Gansterer</span></a>
         <span class="dot flex-grow-1 align-self-end"></span>
         <span class="end pl-3">Philosopher. Teacher in UDK, Berlin</span>
       </li>

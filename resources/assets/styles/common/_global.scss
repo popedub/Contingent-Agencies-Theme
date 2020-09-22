@@ -20,6 +20,10 @@ body {
   color: white;
 }
 
+.link-gris {
+  color: $gris;
+}
+
 .wrap {
   @include media-breakpoint-up(lg) {
     margin-top: 75px;
@@ -35,5 +39,10 @@ body.page-template-template-notations-reflections {
 }
 
 body.single {
+  background-color: #222;
+}
+
+body.template-notation,
+body.template-researchers-single {
   background-color: #222;
 }
