@@ -23,7 +23,9 @@
       </ul>
     </div>
     <div class="col-12 col-lg-6">
+      <a href="https://picsum.photos/seed/picsum/1200/600" data-lightbox="image-1" data-title="N-GANSTERER-20200112-1200-Viena">
       <img class="img-fluid" src="https://picsum.photos/seed/picsum/1200/600" alt="">
+      </a>
     </div>
   </div>
   <div class="row mt-5">

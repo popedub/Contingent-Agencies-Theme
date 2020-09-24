@@ -9,7 +9,22 @@
 
 
   <div class="col-12 col-lg-6">
-    {!! get_search_form(false) !!}
+<input type="text" id="edit_search">
+<input type="button" id="btn-search" value="Find">
+    {{-- <form>
+      <div class="typeahead__container">
+        <div class="typeahead__field">
+          <div class="typeahead__query">
+            <input class="js-typeahead" name="q" autocomplete="on">
+          </div>
+          <div class="typeahead__button">
+            <button type="submit">
+              <span class="typeahead__search-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form> --}}
 
     @foreach ($texts as $item)
     @if ($item->title_chapter)
@@ -19,18 +34,25 @@
     {{ $item->subtitle }}<br>
     @endforeach
   </div>
-  <div class="col-12 col-lg-6">
+  <div class="col-12 col-lg-6 conceptual_frame">
+
     @foreach ($texts as $item)
-    @if ($item->title_chapter)
+    <div id="bloke-{{ $loop->index }}" class="conceptos">
+
+      @if ($item->title_chapter)
         <h3 class="title-conceptual">{{ $item->title_chapter }}</h3>
-        @endif
-    <div class="text-center text-capitalize mt-5 mb-3">
-      {{ $item->subtitle }}<br>
+      @endif
+
+      <div class="text-center text-capitalize mt-5 mb-3">
+        {{ $item->subtitle }}<br>
+      </div>
+
+
+
+        {!! $item->chapter !!}
+
+
     </div>
-
-
-    {!! $item->chapter !!}
-
     @endforeach
   </div>
 </div>

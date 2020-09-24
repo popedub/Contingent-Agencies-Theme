@@ -14,6 +14,27 @@ html {
 body {
   background-color: $gris;
   padding: 15px;
+  font-family: "Scto Grotesk", Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: "Scto Grotesk";
+  src:
+    url("../fonts/Scto Grotesk A Regular.otf") format("otf"),
+    url("../fonts/Scto Grotesk A Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Scto Grotesk Italic";
+  src:
+    url("../fonts/Scto Grotesk A Regular Italic.otf") format("otf"),
+    url("../fonts/Scto Grotesk A Regular Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 .link-white {

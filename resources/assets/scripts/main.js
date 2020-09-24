@@ -2,7 +2,11 @@
 import 'jquery';
 import 'masonry-layout/dist/masonry.pkgd';
 import 'imagesloaded/imagesloaded.pkgd';
-import 'feather-icons/dist/feather'
+import 'feather-icons/dist/feather';
+import 'lightbox2/dist/js/lightbox';
+import 'jquery-typeahead/dist/jquery.typeahead.min';
+import 'jquery-highlight/jquery.highlight';
+import 'isotope-layout/dist/isotope.pkgd';
 
 // Import everything from autoload
 import './autoload/**/*'
@@ -17,6 +21,7 @@ import things from './routes/things';
 import researchCells from './routes/research-cells';
 import category from './routes/category';
 import architectureAndAtmosphere from './routes/architecture-and-atmosphere';
+import conceptualFramework from './routes/conceptual-framework';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -31,6 +36,7 @@ const routes = new Router({
   researchCells,
   category,
   architectureAndAtmosphere,
+  conceptualFramework,
 });
 
 // Load Events

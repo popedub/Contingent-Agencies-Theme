@@ -21,13 +21,13 @@ body.home {
 
 .photo {
   cursor: pointer;
-  transition: filter 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 
   &:hover,
   &:focus,
   &:active,
   &:focus-within {
-    filter: grayscale(0.8);
+    opacity: 0.7;
 
     .info-post {
       opacity: 1;
@@ -114,4 +114,8 @@ ul.list {
       margin-right: 15px;
     }
   }
+}
+
+.highlight {
+  background-color: $primary;
 }

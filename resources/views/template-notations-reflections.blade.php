@@ -23,20 +23,25 @@
       <ul class="list-group list-group-horizontal">
         <a class="list-group-item list-group-item-action" href="#">{{ __('→ filter by:','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" href="#" aria-disabled="true">{{ __('type ↓','contingentagenciestheme' ) }}</a>
-        <a class="list-group-item list-group-item-action" href="#" aria-disabled="true">{{ __('agency ↓','contingentagenciestheme' ) }}</a>
+        <a class="list-group-item list-group-item-action"  aria-disabled="true" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">{{ __('agency ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" href="#" aria-disabled="true">{{ __('practice of research ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" href="#" aria-disabled="true">{{ __('researcher ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" href="#" aria-disabled="true">{{ __('place ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" href="#"
           aria-disabled="true">{{ __('date ↓','contingentagenciestheme' ) }}</a>
       </ul>
-
+      <div class="collapse" id="collapseExample">
+        <div class="dot p-3 filtro-inside">
+          <button data-filter=".light">Light</button>
+          <button data-filter=".atmosphere">Atmosphere</button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="grid row mt-5">
     <div class="grid-sizer col-12 col-lg-4"></div>
     @for ($i = 0; $i < 10; $i++)
-      <div class="col-12 col-lg-4 item-artifact mb-3">
+      <div class="col-12 col-lg-4 item-artifact mb-3 @if ($i % 2 == 0) light @endif">
         <div class="photo">
           @if ($i % 2 == 0)
           <img src="https://picsum.photos/1200/800?ramdom={{ $i }}" alt="" class="img-fluid">

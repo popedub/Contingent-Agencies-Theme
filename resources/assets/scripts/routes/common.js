@@ -1,4 +1,5 @@
 const feather = require('feather-icons')
+const lightbox = require('lightbox2')
 export default {
   init() {
     // JavaScript to be fired on all pages
@@ -20,5 +21,8 @@ export default {
 
   finalize() {
     // JavaScript to be fired on all pages, after page specific JS is fired
+    lightbox.option({
+      disableScrolling: true,
+    })
   },
 };

@@ -9,7 +9,7 @@
 </header>
 <div class="overlay overlay-slidedown">
 
-  <button type="button" id="closeMenu" class="overlay-close font-3">CLOSE</button>
+  <button type="button" id="closeMenu" class="overlay-close font-3">@svg('ico-close', 'ico-menu')</button>
   <nav class="nav-primary">
     @if (has_nav_menu('primary_navigation'))
     {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}

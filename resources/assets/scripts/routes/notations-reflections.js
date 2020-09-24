@@ -2,15 +2,23 @@ export default {
   init() {
     // JavaScript to be fired on the notations & reflections page
     $(document).ready(function () {
-      var $grid = $('.grid').masonry({
+      var $grid = $('.grid').isotope({
         itemSelector: '.item-artifact',
-        columnWidth: '.grid-sizer',
         percentPosition: true,
+        masonry: {
+          // use element for option
+          columnWidth: '.grid-sizer',
+        },
       })
 
       $grid.imagesLoaded().progress(function () {
-        $grid.masonry('layout');
+        $grid.isotope('layout');
       })
+      // filter items on button click
+      $('.filtro-inside').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+      });
 
       var btn = document.getElementById('artifacts');
       var btn2 = document.getElementById('identifiers');
