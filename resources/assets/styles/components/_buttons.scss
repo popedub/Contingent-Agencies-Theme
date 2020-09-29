@@ -1,0 +1,8 @@
+.filtro-inside button {
+  background-color: transparent;
+  border: none;
+}
+
+.filtro-inside button.active {
+  background-color: $primary;
+}

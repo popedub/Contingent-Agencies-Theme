@@ -105,3 +105,21 @@ body.template-researchers-single {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
+
+//audios
+.audio {
+  height: 300px;
+  background-color: $negro;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @include media-breakpoint-up(lg) {
+    height: 400px;
+  }
+}
+
+.ico-pause {
+  display: none;
+}

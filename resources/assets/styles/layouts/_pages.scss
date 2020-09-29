@@ -54,20 +54,20 @@ body.home {
 .list-group-item {
   padding: 0.25rem;
   background-color: transparent;
-  border-top: 1px dotted black;
-  border-bottom: 1px dotted black;
+  border-top: 2px dashed black;
+  border-bottom: 2px dashed black;
   border-right: none;
   border-left: none;
   text-align: center;
 }
 
 .list-group-horizontal .list-group-item:first-child {
-  border-left: 1px dotted black;
+  border-left: 2px dashed black;
   text-align: left;
 }
 
 .list-group-horizontal .list-group-item:last-child {
-  border-right: 1px dotted black;
+  border-right: 2px dashed black;
   text-align: right;
 }
 
@@ -82,16 +82,17 @@ body.home {
   @include media-breakpoint-up(lg) {
     padding-top: 120px;
     padding-bottom: 60px;
+    font-size: 1.25rem;
   }
 }
 
 .dot {
-  border-bottom: 2px dotted black;
+  border-bottom: 2px dashed black;
   margin-bottom: 8px;
 }
 
 .dot-white {
-  border-bottom: 2px dotted white;
+  border-bottom: 2px dashed white;
   margin-bottom: 8px;
 }
 
