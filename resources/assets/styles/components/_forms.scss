@@ -17,3 +17,8 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+input[type="text"] {
+  outline: none;
+  box-shadow: none !important;
+}

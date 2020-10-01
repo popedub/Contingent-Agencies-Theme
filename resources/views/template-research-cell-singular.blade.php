@@ -17,9 +17,11 @@
 
 <div class="filtro dot">
   <p>→ {{ __('view as:', 'contingentagenciestheme') }}</p>
+  <div class="view-as">
   <p><i data-feather="grid"></i><a href="#" id="artifacts"
       class="ml-2 mr-2">{{ __('Artifacs','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#"
       id="identifiers" class="ml-2">{!! __('Identifiers','contingentagenciestheme') !!}</a></p>
+    </div>
 </div>
 <div class="grid row mt-5">
   <div class="grid-sizer col-12 col-lg-6 col-xl-4"></div>
@@ -43,7 +45,7 @@
 </div>
 
 {{-- vista de lista aqui aplicar TABLE --}}
-<div class="row grid-list mt-5 d-none">
+<div class="row grid-list mt-5 d-none f-lg">
   <div class="col-12 item-list">
     <div class="d-flex justify-content-between align-items-center">
       <div class="link-white">{!! __('↓ identifier','contingentagenciestheme') !!}</div>

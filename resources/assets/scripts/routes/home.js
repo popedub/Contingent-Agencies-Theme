@@ -15,5 +15,14 @@ export default {
   },
   finalize() {
     // JavaScript to be fired on the home page, after the init JS
+
+
+    if (sessionStorage.getItem('visit') !== 'true') {
+      $('#modalEvent').modal('show')
+      sessionStorage.setItem('visit', 'true')
+    }
+    console.log(sessionStorage.visit)
+
+
   },
 };

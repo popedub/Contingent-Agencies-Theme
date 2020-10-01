@@ -10,8 +10,8 @@
 {!! get_search_form(false) !!}
 @endif
 
-<div class="photo-home" style="background-image: url('https://picsum.photos/seed/picsum/1200/800')"></div>
-<div class="intro-home">
+<div class="photo-home" style="background-image: url('https://picsum.photos/seed/picsum/1900/1200')"></div>
+<div class="intro-home mb-5">
   <p>
     Each circumstance bring about a specific environment: a significant but non-objectified, precise but vague,
     ephemeral
@@ -25,16 +25,16 @@
   </p>
 
 </div>
-<button class="btn btn-outline-dark ml-auto mr-auto mb-5 d-block">
+<button class="btn btn-outline-dark ml-auto mr-auto mb-5 mt-5 d-block">
   {{ __('Read more', 'contingentagenciestheme') }}
 </button>
 
 <div class="row">
   <div class="col-12">
-    <div class="title d-block text-center mt-5 mb-3">
-      <h3>
+    <div class="title d-block text-center mb-4">
+      <h2>
         {{ __('selected notations and reflections','contingentagenciestheme') }}
-      </h3>
+      </h2>
     </div>
   </div>
 </div>
@@ -64,6 +64,57 @@
 @while (have_posts()) @php the_post() @endphp
 @include('partials.content-'.get_post_type())
 @endwhile
+@query([
+'category_name' => 'featured',
+'post_type' => 'post',
+'posts_per_page' => 1,
+])
 
+@posts($query)
+<div id="modalEvent" class="modal">
+
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="foto-modal col-5 d-block" style="background-image: url('@thumbnail('full', false))'">
+
+            </div>
+
+            <div class="info-modal col-7">
+              <div class="top">
+                <h3 class="entry-title pt-2">@title</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <div class="bottom mt-5">
+                <div class="h3 mb-2">
+                @field('start_date')<br>
+                {{ __('until', 'contingentagenciestheme') }} @field('final_date')
+                </div>
+
+
+                @field('intro')
+
+              <a href="@permalink" class="btn btn-sm btn-outline-dark mt-5 mr-auto mb-5" role="button">
+                {{ __('Read more', 'contingentagenciestheme') }}
+              </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+</div>
+
+@endposts
 {!! get_the_posts_navigation() !!}
 @endsection
+

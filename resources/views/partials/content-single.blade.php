@@ -25,10 +25,10 @@
 </article>
 @if ($content_completed)
   <article class="event-completed">
-    <div class="col-12 text-center mb-3 text-lowercase">
+    <div class="col-12 text-center mb-5 text-lowercase h2">
       {{ $tittle }}
     </div>
-    <div class="entry-content col-12 col-lg-6 offset-lg-6">
+    <div class="entry-content col-12 col-lg-6 offset-lg-6 mt-1">
       {!! $content_completed !!}
     </div>
   </article>

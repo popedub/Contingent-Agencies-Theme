@@ -1,8 +1,26 @@
-.filtro-inside button {
+.filtros-activos {
+  padding: 15px 15px 15px 0;
+}
+
+.filtro-inside button,
+.filtros-activos button {
   background-color: transparent;
   border: none;
 }
 
 .filtro-inside button.active {
   background-color: $primary;
+}
+
+.filtro-inside button.disabled {
+  color: grey;
+}
+
+.filtros-activos button.active {
+  background-color: $azul;
+  margin-right: 10px;
+
+  &::after {
+    content: " X";
+  }
 }

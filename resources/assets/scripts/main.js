@@ -3,10 +3,10 @@ import 'jquery';
 import 'masonry-layout/dist/masonry.pkgd';
 import 'imagesloaded/imagesloaded.pkgd';
 import 'feather-icons/dist/feather';
-import 'lightbox2/dist/js/lightbox';
 import 'jquery-typeahead/dist/jquery.typeahead.min';
 import 'jquery-highlight/jquery.highlight';
 import 'isotope-layout/dist/isotope.pkgd';
+import 'lightgallery/dist/js/lightgallery-all.js';
 
 // Import everything from autoload
 import './autoload/**/*'

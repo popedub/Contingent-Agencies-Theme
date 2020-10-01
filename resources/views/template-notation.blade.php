@@ -8,10 +8,10 @@
 
 
 {{-- aquí hay q llamar al contenido vía API --}}
-<section class="gris intro">
-  <div class="row">
+<section class="gris intro-notation">
+  <div class="row mt-3">
     <div class="col-12 col-lg-6">
-      <p class="link-white">↓ N-GANSTERER-20200112-1200-Viena</p>
+      <p class="link-white mb-0">↓ Identifier: N-GANSTERER-20200112-1200-Viena</p>
       <ul class="list">
         <li>Agency: <a href="#">Resonance</a></li>
         <li>Practice of notation:<a href="#">Video</a></li>
@@ -22,9 +22,9 @@
         <li>Þhing: <a href="#">20200122-1241-Barcelona</a></li>
       </ul>
     </div>
-    <div class="col-12 col-lg-6">
-      <a href="https://picsum.photos/seed/picsum/1200/600" data-lightbox="image-1" data-title="N-GANSTERER-20200112-1200-Viena">
-      <img class="img-fluid" src="https://picsum.photos/seed/picsum/1200/600" alt="">
+    <div class="col-12 col-lg-6 lg-fire">
+      <a data-src="https://picsum.photos/seed/picsum/1200/600" data-sub-html="N-GANSTERER-20200112-1200-Viena">
+      <img class="img-fluid" src="https://picsum.photos/seed/picsum/1200/500" alt="">
       </a>
     </div>
   </div>

@@ -9,6 +9,7 @@ export default {
       btn.addEventListener('click', function () {
         $(this).preventDefault;
         $('.grid-list').removeClass('d-block').addClass('d-none');
+        $('.snapshot').removeClass('d-none').addClass('d-block');
         $('.grid').addClass('d-flex');
 
       })
@@ -16,6 +17,7 @@ export default {
       btn2.addEventListener('click', function () {
         $(this).preventDefault;
         $('.grid').removeClass('d-flex').addClass('d-none');
+        $('.snapshot').removeClass('d-block').addClass('d-none');
         $('.grid-list').removeClass('d-none').addClass('d-block');
 
       })

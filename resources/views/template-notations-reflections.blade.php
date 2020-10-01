@@ -17,84 +17,91 @@
 
   <div class="filtro">
     <p>→ {{ __('view as:', 'contingentagenciestheme') }}</p>
-    <p><i data-feather="grid"></i><a href="#" id="artifacts" class="ml-2 mr-2">{{ __('Artifacs','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#" id="identifiers" class="ml-2">{{ __('Identifiers','contingentagenciestheme')  }}</a></p>
-
+    <div class="view-as">
+      <p><i data-feather="grid"></i><a href="#" id="artifacts" class="ml-2 mr-2">{{ __('Artifacs','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#" id="identifiers" class="ml-2">{{ __('Identifiers','contingentagenciestheme')  }}</a></p>
+    </div>
     <div class="filtros">
-      <ul class="list-group list-group-horizontal">
-        <a class="list-group-item list-group-item-action" href="#">{{ __('→ filter by:','contingentagenciestheme' ) }}</a>
+      <div class="filtros-activos"></div>
+      <ul class="list-group list-group-horizontal" id="grupo">
+        <p class="list-group-item list-group-item-action" href="#">{{ __('→ filter by:','contingentagenciestheme' ) }}</p>
         <a class="list-group-item list-group-item-action" aria-disabled="true" data-toggle="collapse" href="#collapseType" role="button" aria-expanded="false" aria-controls="collapseType">{{ __('type ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" aria-disabled="true" data-toggle="collapse" href="#collapseAgency" role="button" aria-expanded="false" aria-controls="collapseAgency">{{ __('agency ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" aria-disabled="true" data-toggle="collapse" href="#collapsePractice" role="button" aria-expanded="false" aria-controls="collapsePractice">{{ __('practice of research ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" aria-disabled="true" data-toggle="collapse" href="#collapseResearcher" role="button" aria-expanded="false" aria-controls="collapseResearcher">{{ __('researcher ↓','contingentagenciestheme' ) }}</a>
         <a class="list-group-item list-group-item-action" aria-disabled="true" data-toggle="collapse" href="#collapsePlace" role="button" aria-expanded="false" aria-controls="collapsePlace">{{ __('place ↓','contingentagenciestheme' ) }}</a>
-        <a class="list-group-item list-group-item-action"aria-disabled="true" data-toggle="collapse" href="#collapseDate" role="button" aria-expanded="false" aria-controls="collapseDate">{{ __('date ↓','contingentagenciestheme' ) }}</a>
+        <a class="list-group-item list-group-item-action" aria-disabled="true" data-toggle="collapse" href="#collapseDate" role="button" aria-expanded="false" aria-controls="collapseDate">{{ __('date ↓','contingentagenciestheme' ) }}</a>
       </ul>
 
-      <div class="collapse" id="collapseType">
-        <div class="dot p-3 filtro-inside" data-filter-group="type">
-          <button data-filter="">Any</button>
-          <button data-filter=".notation">Notation</button>
-          <button data-filter=".reflection">Reflection</button>
+
+
+      <div class="todo-collapse">
+        <div class="collapse" id="collapseType">
+          {{-- los botones tienen que tener la misma clase que el data-filter para que funcione el script con
+                                  los botones clonados que remueven el filtro --}}
+          <div class="dot p-3 filtro-inside" data-filter-group="type">
+
+            <button class="type notation" data-filter=".notation">Notation</button>
+            <button class="type reflection" data-filter=".reflection">Reflection</button>
+          </div>
+        </div>
+
+        <div class="collapse" id="collapseAgency">
+          <div class="dot p-3 filtro-inside" data-filter-group="agency">
+
+            <button class="agency light" data-filter=".light">Light</button>
+            <button class="agency atmosphere" data-filter=".atmosphere">Atmosphere</button>
+            <button class="agency sound" data-filter=".sound">Sound</button>
+          </div>
+        </div>
+
+        <div class="collapse" id="collapsePractice">
+          <div class="dot p-3 filtro-inside" data-filter-group="practice">
+
+            <button class="practice video" data-filter=".video">Video</button>
+            <button class="practice photo" data-filter=".photo">Photo</button>
+            <button class="practice performative-writing" data-filter=".performative-writing">Performative Writing</button>
+            <button class="practice dance" data-filter=".dance">Dance</button>
+          </div>
+        </div>
+
+        <div class="collapse" id="collapseResearcher">
+          <div class="dot p-3 filtro-inside" data-filter-group="researcher">
+
+            <button class="researcher nikolaous-gansterer" data-filter=".nikolaous-gansterer">Nikolaus Gansterer</button>
+            <button class="researcher tiago-pina" data-filter=".tiago-pina">Tiago Pina</button>
+            <button class="researcher pablo-volt" data-filter=".pablo-volt">Pablo Volt</button>
+            <button class="researcher ricardo-duke" data-filter=".ricardo-duke">Ricardo Duke</button>
+          </div>
+        </div>
+
+        <div class="collapse" id="collapsePlace">
+          <div class="dot p-3 filtro-inside" data-filter-group="place">
+
+            <button class="place albania" data-filter=".albania">Albania</button>
+            <button class="place egipto" data-filter=".egipto">Egipto</button>
+            <button class="place estiopia" data-filter=".etiopia">Etiopía</button>
+            <button class="place madagascar" data-filter=".madagascar">Madagascar</button>
+            <button class="place viena" data-filter=".viena">Viena</button>
+          </div>
+        </div>
+
+        <div class="collapse" id="collapseDate">
+          <div class="dot p-3 filtro-inside" data-filter-group="date">
+
+            <button class="date 2020" data-filter=".2020">2020</button>
+            <button class="date 2019" data-filter=".2019">2019</button>
+            <button class="date 2018" data-filter=".2018">2018</button>
+            <button class="date 2017" data-filter=".2017">2017</button>
+          </div>
         </div>
       </div>
-
-      <div class="collapse" id="collapseAgency">
-        <div class="dot p-3 filtro-inside" data-filter-group="agency">
-          <button data-filter="">Any</button>
-          <button data-filter=".light">Light</button>
-          <button data-filter=".atmosphere">Atmosphere</button>
-          <button data-filter=".sound">Sound</button>
-        </div>
-      </div>
-
-      <div class="collapse" id="collapsePractice">
-        <div class="dot p-3 filtro-inside" data-filter-group="practice">
-          <button data-filter="">Any</button>
-          <button data-filter=".video">Video</button>
-          <button data-filter=".photo">Photo</button>
-          <button data-filter=".performative-writing">Performative Writing</button>
-          <button data-filter=".dance">Dance</button>
-        </div>
-      </div>
-
-      <div class="collapse" id="collapseResearcher">
-        <div class="dot p-3 filtro-inside" data-filter-group="researcher">
-          <button data-filter="">Any</button>
-          <button data-filter=".nikolaous-gansterer">Nikolaus Gansterer</button>
-          <button data-filter=".tiago-pina">Tiago Pina</button>
-          <button data-filter=".pablo-volt">Pablo Volt</button>
-          <button data-filter=".ricardo-duke">Ricardo Duke</button>
-        </div>
-      </div>
-
-      <div class="collapse" id="collapsePlace">
-        <div class="dot p-3 filtro-inside" data-filter-group="place">
-          <button data-filter="">Any</button>
-          <button data-filter=".albania">Albania</button>
-          <button data-filter=".egipto">Egipto</button>
-          <button data-filter=".etiopia">Etiopía</button>
-          <button data-filter=".madagascar">Madagascar</button>
-          <button data-filter=".viena">Viena</button>
-        </div>
-      </div>
-
-      <div class="collapse" id="collapseDate">
-        <div class="dot p-3 filtro-inside" data-filter-group="date">
-          <button data-filter="">Any</button>
-          <button data-filter=".2020">2020</button>
-          <button data-filter=".2019">2019</button>
-          <button data-filter=".2018">2018</button>
-          <button data-filter=".2017">2017</button>
-        </div>
-      </div>
-
     </div>
   </div>
   <div class="grid row mt-5">
     <div class="grid-sizer col-12 col-lg-4"></div>
     <iframe src="https://github.com/anars/blank-audio/blob/master/750-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
 
-    <div class="item-artifact col-12 col-lg-4 mb-3 sound">
+    <div class="item-artifact col-12 col-lg-4 mb-4 sound 2019">
       <div class="audio">
         <div class="play" data-toggle="tooltip" data-placement="top" title="Preview">
           @svg('ico-play', 'ico-play')
@@ -108,7 +115,7 @@
       </div>
     </div>
 
-    <div class="item-artifact col-12 col-lg-4 mb-3 sound">
+    <div class="item-artifact col-12 col-lg-4 mb-4 sound 2020">
       <div class="audio">
         <div class="play" data-toggle="tooltip" data-placement="top" title="Preview">
 
@@ -125,7 +132,7 @@
     </div>
 
     @for ($i = 0; $i < 17; $i++)
-      <div class="col-12 col-lg-4 item-artifact mb-3 dance tiago-pina 2018 albania notation @if ($i % 2 == 0) reflection light ricardo-duke 2020 barcelona video @else atmosphere 2019 nikolaous-gansterer viena photo @endif">
+      <div class="col-12 col-lg-4 item-artifact mb-4 dance 2018 albania notation @if ($i % 2 == 0) reflection light ricardo-duke 2020 barcelona video @else atmosphere 2019 nikolaous-gansterer viena photo @endif">
         <div class="photo">
           @if ($i % 2 == 0)
           <img src="https://picsum.photos/1200/800?ramdom={{ $i }}" alt="" class="img-fluid">

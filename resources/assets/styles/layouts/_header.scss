@@ -4,10 +4,22 @@
     font-size: 1.2rem;
     padding-left: 15px;
   }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    text-decoration: none;
+  }
 }
 
 .page-header {
   text-transform: lowercase;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    text-decoration: none;
+  }
 
   @include media-breakpoint-up(lg) {
     position: absolute;
@@ -16,7 +28,7 @@
     transform: translate(-50%, -50%);
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2.1rem;
       margin-bottom: 0;
       font-weight: 400;
     }

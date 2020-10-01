@@ -11,7 +11,7 @@
 </div>
 
 @endwhile
-<div class="row">
+<div class="row f-lg">
   <div class="col-12">
     <div class="link-white">{!! __('↓ research leaders','contingentagenciestheme') !!}</div>
     <ul class="list">

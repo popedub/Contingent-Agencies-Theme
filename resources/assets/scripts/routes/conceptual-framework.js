@@ -50,17 +50,17 @@ export default {
     busqueda.onkeyup = function() {
       find_my_div();
     }
-    var btn_busqueda = gid('btn-search');
-    btn_busqueda.onclick = function () {
-      find_my_div();
-    }
+    // var btn_busqueda = gid('btn-search');
+    // btn_busqueda.onclick = function () {
+    //   find_my_div();
+    // }
 
     function find_my_div() {
       close_all();
 
       var o_edit = gid('edit_search');
       var str_needle = o_edit.value;
-      console.log(str_needle )
+
       $('.conceptual_frame').highlight(str_needle,{
         wordsOnly: true,
       });
@@ -75,6 +75,8 @@ export default {
           for (var j = 0, divsLen = nameDivs.length; j < divsLen; j++) {
             if (nameDivs[j].textContent.toUpperCase().indexOf(currentSearch) !== -1) {
               nameDivs[j].style.display = 'block';
+              // var resaltado = $('.highlight')
+              // $('html, body').animate({ scrollTop: resaltado.offset().top - $('html, body').offset().top + $('html, body').scrollTop(), scrollLeft: 0}, 500)
             }
           }
         }

@@ -17,15 +17,18 @@
 
   <div class="filtro dot">
     <p>→ {{ __('view as:', 'contingentagenciestheme') }}</p>
-    <p><i data-feather="grid"></i><a href="#" id="snapshots" class="ml-2 mr-2">{{ __('Snapshots','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#" id="identifiers" class="ml-2">{{ __('Identifiers','contingentagenciestheme')  }}</a></p>
+    <div class="view-as">
+      <p><i data-feather="grid"></i><a href="#" id="snapshots" class="ml-2 mr-2">{{ __('Snapshots','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#" id="identifiers" class="ml-2">{{ __('Identifiers','contingentagenciestheme')  }}</a></p>
+    </div>
   </div>
-  <div class="grid row mt-5">
+  <div class="snapshot link-white mt-5 f-lg d-block">{{ __('↓ Snapshots', 'contingentagenciestheme') }}</div>
+  <div class="grid row">
 
     @for ($i = 0; $i < 10; $i++)
-      <div class="col-12 col-lg-6 col-xl-4 item-artifact mb-3">
+      <div class="col-12 col-lg-6 col-xl-6 item-artifact mb-3">
         <div class="photo">
 
-          <img src="https://picsum.photos/1200/800?ramdom={{ $i }}" alt="" class="img-fluid">
+          <img src="https://picsum.photos/1200/700?ramdom={{ $i }}" alt="" class="img-fluid">
 
           <div class="info-post text-center">
             <p>N-GANSTERER-20200112-1200-Viena</p>
@@ -36,7 +39,7 @@
   </div>
 
   {{-- vista de lista --}}
-  <div class="row grid-list mt-5 d-none">
+  <div class="row grid-list mt-5 d-none f-lg">
     <div class="col-12 item-list">
     <div class="d-flex justify-content-between align-items-center">
       <div class="link-white">{{ __('↓ identifiers','contingentagenciestheme' ) }}</div>

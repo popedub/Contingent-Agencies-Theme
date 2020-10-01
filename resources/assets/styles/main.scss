@@ -10,8 +10,8 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 // @import "~some-node-module";
-@import "~lightbox2/dist/css/lightbox";
 @import "~jquery-typeahead/dist/jquery.typeahead.min";
+@import "~lightgallery/dist/css/lightgallery.css";
 
 /** Import theme styles */
 @import "common/global";
