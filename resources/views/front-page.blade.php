@@ -31,7 +31,7 @@
 
 <div class="row">
   <div class="col-12">
-    <div class="title d-block text-center mb-4">
+    <div class="title d-block text-center mb-5">
       <h2>
         {{ __('selected notations and reflections','contingentagenciestheme') }}
       </h2>
@@ -41,7 +41,7 @@
 <div class="grid row">
   <div class="grid-sizer col-12 col-lg-6"></div>
   @for ($i = 0; $i < 10; $i++)
-  <div class="col-12 col-lg-6 post-home mb-3">
+  <div class="col-12 col-lg-6 post-home">
     <div class="photo">
       @if ($i % 2 == 0)
       <img src="https://picsum.photos/1200/800?ramdom={{ $i }}" alt="" class="img-fluid">
@@ -84,7 +84,7 @@
 
             <div class="info-modal col-7">
               <div class="top">
-                <h3 class="entry-title pt-2">@title</h3>
+                <h3 class="entry-title">@title</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -99,7 +99,7 @@
 
                 @field('intro')
 
-              <a href="@permalink" class="btn btn-sm btn-outline-dark mt-5 mr-auto mb-5" role="button">
+              <a href="@permalink" class="btn btn-sm btn-outline-dark mt-5 mr-auto" role="button">
                 {{ __('Read more', 'contingentagenciestheme') }}
               </a>
               </div>

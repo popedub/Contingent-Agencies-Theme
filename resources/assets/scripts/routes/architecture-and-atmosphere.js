@@ -1,7 +1,7 @@
 export default {
   init() {
     // JavaScript to be fired on the notations & reflections page
-    $(document).ready(function () {
+    $(function () {
       var $grid = $('.grid').masonry({
         itemSelector: '.item-artifact',
         columnWidth: '.grid-sizer',
@@ -28,7 +28,7 @@ export default {
 
       })
 
-      $('.intro p').append('<span class="read-more">→ </span><a href="">Read more</a>');
+      $('.intro p').append('<span class="read-more">→ </span><a class="link-read" href="">Read more</a>');
     })
   },
 };

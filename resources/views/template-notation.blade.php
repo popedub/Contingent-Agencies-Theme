@@ -30,7 +30,7 @@
   </div>
   <div class="row mt-5">
     <div class="col-12 col-lg-6">
-      <p class="link-white">↓ notes</p>
+      <p class="link-white mb-0">↓ notes</p>
       <div class="acordeon">
         <p>Architecture of Embodiment is a research environment conceived and realized by Alex Arteaga in which
           architecture is
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="col-12 col-lg-6">
-      <p class="link-white">↓ Short description of the atmosphere</p>
+      <p class="link-white mb-0">↓ Short description of the atmosphere</p>
       <p>The emergence of sense is researched here in attendance to its most fundamental processes: those enabled by the
         immediate, spontaneous, sensuous, emotional and non-thetic interaction between human bodies and their
         surroundings, that
@@ -49,7 +49,7 @@
 
     </div>
     <div class="col-12 col-lg-6">
-      <p class="link-white">↓ strategies of display</p>
+      <p class="link-white mb-0">↓ strategies of display</p>
       <p>The emergence of sense is researched here in attendance to its most fundamental processes: those enabled by the
         immediate, spontaneous, sensuous, emotional and non-thetic interaction between human bodies and their
         surroundings, that
@@ -58,7 +58,7 @@
     <div class="col-12 col-lg-6">
       <div class="d-flex">
         <div>
-          <p class="link-white">↓ related reflections</p>
+          <p class="link-white mb-0">↓ related reflections</p>
           <ul class="list">
             <li><a href="#">R-Gomez-20191102-0600-Bogota</a></li>
             <li><a href="#">R-Gansterer-20200113-1200-Vienna</a></li>
@@ -66,7 +66,7 @@
           </ul>
         </div>
         <div class="pl-5">
-          <p class="link-white">↓ research cells</p>
+          <p class="link-white mb-0">↓ research cells</p>
           <ul class="list">
             <li><a href="#">Environment and atmosphere</a></li>
             <li><a href="#">Acustics</a></li>
@@ -78,9 +78,9 @@
   </div>
 </section>
 <section>
-  <div class="row dark mt-5">
+  <div class="row dark mt-4">
     <div class="col-12 text-center mb-5">
-      <h3>artifacs of notation</h3>
+      <h3>artifacts of notation</h3>
     </div>
     <div class="col-12 col-lg-6 offset-lg-6">
       <div class="embed-responsive embed-responsive-16by9">

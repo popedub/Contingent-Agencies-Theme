@@ -32,7 +32,7 @@
     <div class="col-12">
       <h2 class="text-center mt-3">notations & reflections</h2>
       <div class="d-flex justify-content-between align-items-center mt-5">
-        <div class="link-gris">{!! __('↓ indentifier','contingentagenciestheme') !!}</div>
+        <div class="link-gris">{!! __('↓ identifier','contingentagenciestheme') !!}</div>
         <div class="link-gris">{!! __('agencies ↓','contingentagenciestheme') !!}</div>
       </div>
 

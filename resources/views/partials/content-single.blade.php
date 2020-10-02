@@ -17,10 +17,11 @@
   </div>
   <div class="entry-content col-12 col-lg-6 offset-lg-6">
     {!! $content !!}
-
+    <div class="fotos-evento mt-5">
     @foreach ($fotos as $foto)
       <img src="{{ $foto->url }}" alt="{{ $foto->alt }}" class="img-fluid mb-3">
     @endforeach
+    </div>
   </div>
 </article>
 @if ($content_completed)

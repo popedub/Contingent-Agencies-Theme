@@ -335,7 +335,7 @@ export default {
 
       })
 
-      $('.intro p').append('<span class="read-more">→ </span><a href="">Read more</a>');
+      $('.intro p').append('<span class="read-more">→ </span><a class="link-read" href="">Read more</a>');
 
       //audio pre-escucha
       let audio = document.getElementsByClassName('ico-play');

@@ -15,7 +15,7 @@
     <div class="chapters">
       @foreach ($texts as $item)
       @if ($item->title_chapter)
-      <div class="title-conceptual mb-3 mt-3">{{ $item->title_chapter }}</div>
+      <div class="title-conceptual mt-3">{{ $item->title_chapter }}</div>
       @endif
       <div class="subtitle-conceptual">{{ $item->subtitle }}</div>
       @endforeach

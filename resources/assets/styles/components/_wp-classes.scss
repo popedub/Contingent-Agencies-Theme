@@ -38,6 +38,9 @@
 /** Captions */
 .wp-caption {
   @extend .figure;
+
+  font-size: 0.7rem;
+  color: $negro;
 }
 
 .wp-caption img {
@@ -47,6 +50,9 @@
 
 .wp-caption-text {
   @extend .figure-caption;
+
+  font-size: 0.7rem;
+  color: $negro;
 }
 
 /** Text meant only for screen readers */

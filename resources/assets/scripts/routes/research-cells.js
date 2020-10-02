@@ -28,7 +28,7 @@ export default {
 
       })
 
-      $('.intro p').append('<span class="read-more">→ </span><a href="">Read more</a>');
+      $('.intro p').append('<span class="read-more">→ </span><a href="" class="link-read">Read more</a>');
     })
   },
 };

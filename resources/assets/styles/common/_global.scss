@@ -49,7 +49,13 @@ h2 {
   color: grey;//$gris;
 }
 
-body:not(.template-notations).wrap {
+// body:not(.template-notations).wrap {
+//   @include media-breakpoint-up(lg) {
+//     margin-top: 75px;
+//   }
+// }
+
+body .wrap {
   @include media-breakpoint-up(lg) {
     margin-top: 75px;
   }

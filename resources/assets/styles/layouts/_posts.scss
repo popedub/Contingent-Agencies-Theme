@@ -12,7 +12,7 @@ body.category {
     @extend .col-lg-6;
 
     @include media-breakpoint-up(lg) {
-      margin-bottom: 15px;
+      margin-bottom: 50px;
       padding-left: 0;
       padding-right: 0;
     }
@@ -20,8 +20,18 @@ body.category {
 
   .entry-title,
   .entry-summary {
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  h2 {
+    font-size: 1.85rem;
+  }
+
+  .entry-summary {
+    @include media-breakpoint-up(lg) {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -93,6 +103,10 @@ body.template-researchers-single {
 
   .dark {
     color: white;
+
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 300px;
+    }
   }
 
   ul {
@@ -119,8 +133,12 @@ body.template-researchers-single {
 
   @include media-breakpoint-up(lg) {
     padding-top: 90px;//para things ojo con que no sea diferente en todas las páginas
-    padding-bottom: 50px; //170px para notation y relfections
-    font-size: 0.9rem;
+    padding-bottom: 100px; //170px para notation y relfections
+    font-size: 0.8rem;
+  }
+
+  ul.list li {
+    font-size: 0.8rem;
   }
 }
 

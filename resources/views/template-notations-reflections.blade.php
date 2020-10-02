@@ -21,7 +21,7 @@
       <p><i data-feather="grid"></i><a href="#" id="artifacts" class="ml-2 mr-2">{{ __('Artifacs','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#" id="identifiers" class="ml-2">{{ __('Identifiers','contingentagenciestheme')  }}</a></p>
     </div>
     <div class="filtros">
-      <div class="filtros-activos"></div>
+
       <ul class="list-group list-group-horizontal" id="grupo">
         <p class="list-group-item list-group-item-action" href="#">{{ __('→ filter by:','contingentagenciestheme' ) }}</p>
         <a class="list-group-item list-group-item-action" aria-disabled="true" data-toggle="collapse" href="#collapseType" role="button" aria-expanded="false" aria-controls="collapseType">{{ __('type ↓','contingentagenciestheme' ) }}</a>
@@ -95,6 +95,7 @@
           </div>
         </div>
       </div>
+      <div class="filtros-activos"></div>
     </div>
   </div>
   <div class="grid row mt-5">

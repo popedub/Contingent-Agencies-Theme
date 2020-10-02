@@ -54,7 +54,7 @@ body.home .brand {
     width: 44px;
     height: 44px;
     right: 30px;
-    top: 30px;
+    top: 25px;
     left: auto;
 
     @extend .fixed-top;
@@ -173,6 +173,7 @@ body.home .brand {
   @include media-breakpoint-up(lg) {
     padding-top: 0;
     height: 100%;
+    padding-left: 15px;
   }
 }
 
@@ -287,10 +288,26 @@ body.home .brand {
 
 #menu-menu-top a {
   color: white;
+  transition: color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:focus-within
+  &:active {
+    color: $negro;
+  }
 }
 
 #menu-bottom-menu a {
   color: $negro;
+  transition: color 0.3s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:focus-within
+  &:active {
+    color: white;
+  }
 }
 
 header.banner {
