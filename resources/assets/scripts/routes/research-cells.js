@@ -16,6 +16,8 @@ export default {
       var btn2 = document.getElementById('cell-name');
       btn.addEventListener('click', function () {
         $(this).preventDefault;
+        $('#artifacts').addClass('active');
+        $('#cell-name').removeClass('active');
         $('.grid-list').removeClass('d-block').addClass('d-none');
         $('.grid').addClass('d-block');
 
@@ -23,6 +25,8 @@ export default {
 
       btn2.addEventListener('click', function () {
         $(this).preventDefault;
+        $('#artifacts').removeClass('active');
+        $('#cell-name').addClass('active');
         $('.grid').removeClass('d-block').addClass('d-none');
         $('.grid-list').removeClass('d-none').addClass('d-block');
 

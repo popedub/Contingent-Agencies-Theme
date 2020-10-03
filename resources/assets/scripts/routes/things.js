@@ -8,6 +8,8 @@ export default {
       var btn2 = document.getElementById('identifiers');
       btn.addEventListener('click', function () {
         $(this).preventDefault;
+        $('#snapshots').addClass('active');
+        $('#identifiers').removeClass('active');
         $('.grid-list').removeClass('d-block').addClass('d-none');
         $('.snapshot').removeClass('d-none').addClass('d-block');
         $('.grid').addClass('d-flex');
@@ -16,6 +18,8 @@ export default {
 
       btn2.addEventListener('click', function () {
         $(this).preventDefault;
+        $('#snapshots').removeClass('active');
+        $('#identifiers').addClass('active');
         $('.grid').removeClass('d-flex').addClass('d-none');
         $('.snapshot').removeClass('d-block').addClass('d-none');
         $('.grid-list').removeClass('d-none').addClass('d-block');

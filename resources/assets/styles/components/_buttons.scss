@@ -1,15 +1,17 @@
 .filtros-activos {
   padding: 15px 15px 15px 0;
+  display: block ruby;
 }
 
 .filtro-inside button,
 .filtros-activos button {
   background-color: transparent;
   border: none;
+  font-size: 0.8rem;
 }
 
 .filtro-inside button.active {
-  background-color: $primary;
+  color: white;
 }
 
 .filtro-inside button.disabled {
@@ -17,8 +19,11 @@
 }
 
 .filtros-activos button.active {
-  background-color: $azul;
-  margin-right: 10px;
+  color: black;
+  background-color: #b4b4b4;
+  border-radius: 8px;
+  margin-left: 10px;
+  padding: 0 12px;
 
   &::after {
     content: " X";

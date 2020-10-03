@@ -18,7 +18,7 @@
   <div class="filtro">
     <p>→ {{ __('view as:', 'contingentagenciestheme') }}</p>
     <div class="view-as">
-      <p><i data-feather="grid"></i><a href="#" id="artifacts" class="ml-2 mr-2">{{ __('Artifacs','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#" id="identifiers" class="ml-2">{{ __('Identifiers','contingentagenciestheme')  }}</a></p>
+      <p><a href="#view" id="artifacts" class="ml-2 mr-2 active"><i data-feather="grid"></i> {{ __('Artifacs','contingentagenciestheme')  }}</a> <a href="#view" id="identifiers" class="ml-2"><i data-feather="list"></i> {{ __('Identifiers','contingentagenciestheme')  }}</a></p>
     </div>
     <div class="filtros">
 
@@ -96,9 +96,12 @@
         </div>
       </div>
       <div class="filtros-activos"></div>
+
     </div>
   </div>
-  <div class="grid row mt-5">
+  <div class="snapshot link-white mt-5 f-lg d-block">{{ __('↓ artifacts', 'contingentagenciestheme') }}</div>
+  <div class="grid row">
+
     <div class="grid-sizer col-12 col-lg-4"></div>
     <iframe src="https://github.com/anars/blank-audio/blob/master/750-milliseconds-of-silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
 
@@ -149,7 +152,8 @@
   </div>
 
   {{-- vista de lista --}}
-  <div class="row grid-list mt-5 d-none">
+  <div class="identifiers link-white mt-5 f-lg d-none">{{ __('↓ identifiers', 'contingentagenciestheme') }}</div>
+  <div class="row grid-list d-none">
     <div class="col-12 item-list">
     <ul class="list">
       @for ($i = 0; $i < 17; $i++)

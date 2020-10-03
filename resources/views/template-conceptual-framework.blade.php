@@ -17,20 +17,30 @@
       @if ($item->title_chapter)
       <div class="title-conceptual mt-3">{{ $item->title_chapter }}</div>
       @endif
-      <div class="subtitle-conceptual">{{ $item->subtitle }}</div>
+      <div class="subtitle-conceptual">
+        @php
+        $anchor = str_replace(" ", "-", $item->subtitle );
+        $anchor = strtolower($anchor);
+        @endphp
+        <a href="#{{ $anchor }}">{{ $item->subtitle }}</a>
+      </div>
       @endforeach
     </div>
   </div>
   <div class="col-12 col-lg-6 conceptual_frame">
 
     @foreach ($texts as $item)
+    @php
+    $anchor = str_replace(" ", "-", $item->subtitle );
+    $anchor = strtolower($anchor);
+    @endphp
     <div id="bloke-{{ $loop->index }}" class="conceptos">
 
       @if ($item->title_chapter)
       <h3 class="title-conceptual">{{ $item->title_chapter }}</h3>
       @endif
 
-      <div class="text-center text-capitalize mt-5 mb-3">
+      <div class="text-center text-capitalize mt-5 mb-3" id="{{ $anchor }}">
         {{ $item->subtitle }}<br>
       </div>
 

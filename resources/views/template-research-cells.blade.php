@@ -18,9 +18,9 @@
 <div class="filtro dot">
   <p>→ {{ __('view as:', 'contingentagenciestheme') }}</p>
   <div class="view-as">
-  <p><i data-feather="grid"></i><a href="#" id="artifacts"
-      class="ml-2 mr-2">{{ __('artifacs','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#"
-      id="cell-name" class="ml-2">{!! __('cell&#39;s name','contingentagenciestheme') !!}</a></p>
+  <p><a href="#view" id="artifacts"
+      class="ml-2 mr-2 active"><i data-feather="grid"></i> {{ __('artifacs','contingentagenciestheme')  }}</a> <a href="#view"
+      id="cell-name" class="ml-2"><i data-feather="list"></i> {!! __('cell&#39;s name','contingentagenciestheme') !!}</a></p>
       </div>
 </div>
 <div class="grid row mt-5">
@@ -44,7 +44,7 @@
 @endfor
 </div>
 
-{{-- vista de lista aqui aplicar TABLE --}}
+
 <div class="row grid-list mt-5 d-none f-lg">
   <div class="col-12 item-list">
     <div class="d-flex justify-content-between align-items-center">
@@ -55,7 +55,7 @@
       <div class="link-white">{{ __('reflections ↓','contingentagenciestheme' ) }}</div>
     </div>
     <ul class="list">
-      @for ($i = 0; $i < 10; $i++)
+      @for ($i = 0; $i < 20; $i++)
         <li class="d-flex justify-content-between align-items-center">
         <span class="id pr-3"><a href="{{ get_permalink(90) }}">Architecture and Atmosphere</a></span>
         <span class="dot flex-grow-1 align-self-end"></span>

@@ -1,7 +1,8 @@
+const Isotope = require('isotope-layout')
 export default {
   init() {
     // JavaScript to be fired on the notations & reflections page
-    $(document).ready(function () {
+    $(document).ready(function() {
       var $grid = $('.grid').isotope({
         itemSelector: '.item-artifact',
         percentPosition: true,
@@ -14,6 +15,19 @@ export default {
       $grid.imagesLoaded().progress(function () {
         $grid.isotope('layout');
       })
+
+      //para añadir clase a los elemtos cuándo los escondemos
+      var itemReveal = Isotope.Item.prototype.reveal;
+      Isotope.Item.prototype.reveal = function () {
+        itemReveal.apply(this, arguments);
+        $(this.element).removeClass('isotope-hidden');
+      };
+
+      var itemHide = Isotope.Item.prototype.hide;
+      Isotope.Item.prototype.hide = function () {
+        itemHide.apply(this, arguments);
+        $(this.element).addClass('isotope-hidden');
+      };
       // store filter for each group
       var filters = {};
       // filter items on button click
@@ -212,6 +226,15 @@ export default {
         // before iterating we empty previous display vals
         $filterDisplay.empty();
         // clone method for filter display
+        //display filter by
+        var numItemsHidden = $('.item-artifact.isotope-hidden').length;
+
+        if (numItemsHidden !== 0) {
+          $filterDisplay.append('<p>→ selected filters: </p>')
+        }
+        if (numItemsHidden == 0) {
+          $filterDisplay.empty();
+        }
         var clone = 'clone';
         var cloneId = 0; // because cloning an id attr just wrong :>
         $('button.active').each(function () {
@@ -321,17 +344,36 @@ export default {
       //cambio de vista entre artifacts e identificadores
       var btn = document.getElementById('artifacts');
       var btn2 = document.getElementById('identifiers');
+      var btnGroup = $('.list-group-item-action');
       btn.addEventListener('click', function () {
         $(this).preventDefault;
+        $(this).addClass('active');
+        $('#identifiers').removeClass('active');
         $('.grid-list').removeClass('d-block').addClass('d-none');
+        $('.identifiers').removeClass('d-block').addClass('d-none');
+
         $('.grid').addClass('d-block');
+        $('.snapshot').removeClass('d-none').addClass('d-block');
+
 
       })
 
       btn2.addEventListener('click', function () {
         $(this).preventDefault;
+        $(this).addClass('active');
+        $('#artifacts').removeClass('active');
         $('.grid').removeClass('d-block').addClass('d-none');
         $('.grid-list').removeClass('d-none').addClass('d-block');
+        $('.identifiers').removeClass('d-none').addClass('d-block');
+        $('.snapshot').removeClass('d-block').addClass('d-none');
+
+      })
+      btnGroup.on('click', function(){
+        if($(this).hasClass('active')){
+          $(this).removeClass('active')
+        }else {
+          $(this).addClass('active').siblings().removeClass('active');
+        }
 
       })
 

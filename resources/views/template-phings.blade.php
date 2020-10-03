@@ -18,7 +18,7 @@
   <div class="filtro dot">
     <p>→ {{ __('view as:', 'contingentagenciestheme') }}</p>
     <div class="view-as">
-      <p><i data-feather="grid"></i><a href="#" id="snapshots" class="ml-2 mr-2">{{ __('Snapshots','contingentagenciestheme')  }}</a> <i data-feather="list"></i><a href="#" id="identifiers" class="ml-2">{{ __('Identifiers','contingentagenciestheme')  }}</a></p>
+      <p><a href="#view" id="snapshots" class="ml-2 mr-2 active"><i data-feather="grid"></i> {{ __('Snapshots','contingentagenciestheme')  }}</a> <a href="#view" id="identifiers" class="ml-2"><i data-feather="list"></i> {{ __('Identifiers','contingentagenciestheme')  }}</a></p>
     </div>
   </div>
   <div class="snapshot link-white mt-5 f-lg d-block">{{ __('↓ Snapshots', 'contingentagenciestheme') }}</div>
@@ -46,7 +46,7 @@
       <div class="link-white">{{ __('notators ↓','contingentagenciestheme' ) }}</div>
     </div>
     <ul class="list">
-      @for ($i = 0; $i < 10; $i++)
+      @for ($i = 0; $i < 20; $i++)
 
         <li class="d-flex justify-content-between align-items-center">
           <span class="id pr-3">N-GANSTERER-20200112-1200-Viena</span>
