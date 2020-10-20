@@ -78,7 +78,7 @@
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            <div class="foto-modal col-5 d-block" style="background-image: url('@thumbnail('full', false))'">
+            <div class="foto-modal col-5 d-block" style="background-image: url('@thumbnail('full', false)'">
 
             </div>
 

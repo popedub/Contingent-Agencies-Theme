@@ -100,6 +100,7 @@
     </div>
   </div>
   <div class="snapshot link-white mt-5 f-lg d-block">{{ __('↓ artifacts', 'contingentagenciestheme') }}</div>
+  <?php $upload_dir = wp_upload_dir(); ?>
   <div class="grid row">
 
     <div class="grid-sizer col-12 col-lg-4"></div>
@@ -112,7 +113,7 @@
         </div>
 
       <audio class="audio-test">
-        <source src="http://localhost:8888/contingentagencies/wp-content/uploads/2020/09/Cococo-mix-leo.mp3"
+        <source src="{{ $upload_dir['baseurl'] }}/2020/09/Cococo-mix-leo.mp3"
           type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
@@ -128,7 +129,7 @@
 
 
           <audio class="audio-test">
-            <source src="http://localhost:8888/contingentagencies/wp-content/uploads/2020/09/Volt-8-elektron.mp3"
+            <source src="{{ $upload_dir['baseurl'] }}/2020/09/Volt-8-elektron.mp3"
               type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>

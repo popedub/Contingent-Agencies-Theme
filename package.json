@@ -79,6 +79,7 @@
     "bootstrap": "v4.3.1",
     "feather-icons": "^4.28.0",
     "imagesloaded": "^4.1.4",
+    "infinite-scroll": "^3.0.6",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.3.1",
     "jquery-highlight": "^3.5.0",
