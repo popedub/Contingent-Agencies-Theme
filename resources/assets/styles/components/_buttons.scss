@@ -29,3 +29,10 @@
     content: " X";
   }
 }
+
+.btn-outline-dark {
+  &:hover,
+  &:focus {
+    color: $azul;
+  }
+}

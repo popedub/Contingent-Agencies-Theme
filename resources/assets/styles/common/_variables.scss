@@ -12,3 +12,12 @@ $navbar-light-toggler-icon-bg: none;
 $azul: #659f9d;
 $gris: #bebebe;
 $negro: #555;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1500px
+);

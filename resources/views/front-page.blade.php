@@ -90,7 +90,7 @@
                 </button>
               </div>
 
-              <div class="bottom mt-5">
+              <div class="bottom mt-3">
                 <div class="h3 mb-2">
                 @field('start_date')<br>
                 {{ __('until', 'contingentagenciestheme') }} @field('final_date')

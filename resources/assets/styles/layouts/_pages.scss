@@ -116,7 +116,12 @@ body.home {
   padding: 0;
 
   .top {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+  }
+
+  .bottom {
+    font-size: 0.85rem;
+    line-height: 1.2;
   }
 
   h3 {
@@ -203,13 +208,26 @@ body.home {
   border-bottom: 1px dashed black;
 }
 
+.list-group {
+  display: inline-block;
+  width: 100%;
+  padding: 25px 0;
+}
+
 .list-group-item {
-  padding: 0.75rem 0.25rem;
+  padding: 0.75rem 2.5rem 0.75rem 0.25rem;
   background-color: transparent;
   border: none;
   text-align: center;
   font-size: 0.8rem;
   color: black;
+  display: inline;
+  margin-right: 20px;
+  line-height: 1.5;
+
+  @include media-breakpoint-up(xxl) {
+    padding-right: 5.5rem;
+  }
 }
 
 .list-group-item-action:hover,
@@ -302,7 +320,7 @@ ul.list {
 }
 
 .highlight {
-  background-color: $primary;
+  background-color: $azul;
 }
 
 #edit_search {

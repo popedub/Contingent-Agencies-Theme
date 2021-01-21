@@ -99,7 +99,7 @@
 
     </div>
   </div>
-  <div class="snapshot link-white mt-5 f-lg d-block">{{ __('↓ artifacts', 'contingentagenciestheme') }}</div>
+  <div class="snapshot link-white mt-5 f-lg d-block mb-2">{{ __('↓ artifacts', 'contingentagenciestheme') }}</div>
   <?php $upload_dir = wp_upload_dir(); ?>
   <div class="grid row">
 

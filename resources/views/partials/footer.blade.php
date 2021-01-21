@@ -1,4 +1,4 @@
-@if (is_home() || is_category() || is_single() || is_page(array('conceptual-framework', 'researchers')) )
+@if (is_front_page() || is_category() || is_single() || is_page(array('conceptual-framework', 'researchers')) )
 <footer class="content-info">
   <div class="container-fluid">
     @php dynamic_sidebar('sidebar-footer') @endphp
@@ -14,4 +14,9 @@
     </div>
   </div>
 </footer>
+@else
+  <footer class="content-info mt-5 pt-5">
+    <div class="container-fluid">
+    </div>
+  </footer>
 @endif
