@@ -319,6 +319,18 @@ ul.list {
   }
 }
 
+.li-list {
+  font-size: 1.5rem;
+
+  &::before {
+    content: "\25CF";
+    display: inline-block;
+    font-size: 0.35rem;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+}
+
 .highlight {
   background-color: $azul;
 }

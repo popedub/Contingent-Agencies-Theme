@@ -18,7 +18,7 @@ export default {
         $(this).preventDefault;
         $('#artifacts').addClass('active');
         $('#cell-name').removeClass('active');
-        $('.grid-list').removeClass('d-block').addClass('d-none');
+        $('.grid-list').removeClass('d-flex').addClass('d-none');
         $('.grid').addClass('d-block');
 
       })
@@ -28,7 +28,7 @@ export default {
         $('#artifacts').removeClass('active');
         $('#cell-name').addClass('active');
         $('.grid').removeClass('d-block').addClass('d-none');
-        $('.grid-list').removeClass('d-none').addClass('d-block');
+        $('.grid-list').removeClass('d-none').addClass('d-flex');
 
       })
 
