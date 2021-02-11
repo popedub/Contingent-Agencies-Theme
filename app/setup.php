@@ -38,7 +38,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
      */
     add_theme_support('title-tag');
-
+    add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
     /**
      * Register navigation menus
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/

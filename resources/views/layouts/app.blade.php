@@ -1,7 +1,11 @@
 <!doctype html>
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
-  <body @php (body_class()) @endphp>
+  <body @if (in_category('researchers'))
+    @php (body_class('researchers-single')) @endphp>
+  @else
+    @php (body_class()) @endphp>
+  @endif
     @php do_action('get_header') @endphp
     @include('partials.header')
     <div class="wrap container-fluid" role="document">

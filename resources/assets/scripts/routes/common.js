@@ -1,4 +1,5 @@
 const feather = require('feather-icons')
+import Cookies from 'js-cookie';
 export default {
   init() {
     // JavaScript to be fired on all pages
@@ -16,6 +17,24 @@ export default {
       })
       feather.replace()
     });
+
+    if ($('.filter-cookie').length > 0){
+      $('.filter-cookie').on('click', function (){
+        if($(this).hasClass('agency')) {
+          Cookies.set('filter_parent', 'agency');
+        }
+        if ($(this).hasClass('practice')) {
+          Cookies.set('filter_parent', 'practice');
+        }
+        var value = $(this).text().toLowerCase();
+        value = value.toString().replace(/ /g, '-');
+
+
+        Cookies.set('filter', value);
+      })
+
+    }
+
   },
 
   finalize() {

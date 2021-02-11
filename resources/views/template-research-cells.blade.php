@@ -25,23 +25,34 @@
 </div>
 <div class="grid row mt-5">
   <div class="grid-sizer col-12 col-lg-6 col-xl-4"></div>
+  @foreach (App::api() as $post)
+    @if(strcmp($post->data[3]->label, 'keywords') == 0)
+    @if (strcmp($post->data[3]->value[0], 'research cell') == 0)
+      @if (count($post->media) == 1)
+        @php
+        $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
+        @endphp
+        @elseif (count($post->media) >= 2)
+        @php
+        $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
+        @endphp
+      @endif
+      <div class="col-12 col-lg-6 col-xl-4 item-artifact mb-3">
+        <div class="photo">
+          <a href="{{ $post->data[6]->value }}">
 
-  @for ($i = 0; $i < 10; $i++) <div class="col-12 col-lg-6 col-xl-4 item-artifact mb-3">
-    <div class="photo">
-      <a href="{{ get_permalink(90) }}">
-        @if ($i % 2 == 0)
-        <img src="https://picsum.photos/1200/800?ramdom={{ $i }}" alt="" class="img-fluid">
-        @else
-        <img src="https://picsum.photos/950/1300?ramdom={{ $i }}" alt="" class="img-fluid">
-        @endif
+            <img src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}" alt="" class="img-fluid">
 
-        <div class="info-post text-center">
-          <p>N-GANSTERER-20200112-1200-Viena</p>
+
+            <div class="info-post text-center">
+              <p>{{ $post->data[0]->value }}</p>
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-</div>
-@endfor
+      </div>
+    @endif
+  @endif
+  @endforeach
 </div>
 
 

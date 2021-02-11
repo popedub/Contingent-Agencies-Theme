@@ -1,8 +1,10 @@
 const Isotope = require('isotope-layout')
+import Cookies from 'js-cookie';
 export default {
   init() {
     // JavaScript to be fired on the notations & reflections page
     $(document).ready(function() {
+
       var $grid = $('.grid').isotope({
         itemSelector: '.item-artifact',
         percentPosition: true,
@@ -30,23 +32,51 @@ export default {
       };
       // store filter for each group
       var filters = {};
-      // filter items on button click
-      $('.filtro-inside button').on('click',  function () {
-        // exit directly if filter already disabled
-        if ($(this).hasClass('disabled')) {
-          return false;
+
+      // check for cookie, then destroy cookies
+      if (Cookies.get('filter_parent') != null) {
+
+        var galleta = '.' + Cookies.get('filter');
+
+        var $this = $('button' + galleta);
+
+        // if is agency, add class active to buttons filters
+        if (Cookies.get('filter_parent') == 'agency') {
+          $('#grupo').find('[aria-controls="collapseAgency"]').trigger('click');
+          $('#grupo').find('[aria-controls="collapseAgency"]').addClass('active');
+          $('#collapseAgency').collapse({
+            toogle: true,
+          })
+
+          //$('button' + galleta).addClass('active');
+         $('.filtro-inside button' + galleta).trigger('click');
+        }
+        // if is practice, add class active to buttons filters
+        if (Cookies.get('filter_parent') == 'practice') {
+          $('#grupo').find('[aria-controls="collapsePractice"]').trigger('click');
+          $('#grupo').find('[aria-controls="collapsePractice"]').addClass('active');
+          $('#collapsePractice').collapse({
+            toogle: true,
+          })
+
+          //$('button' + galleta).addClass('active');
+          $('.filtro-inside button' + galleta).trigger('click');
         }
 
-
-        var $this = $(this);
-
+        //una ves usadas la cookies, las borramos
+        Cookies.remove('filter_parent');
+        Cookies.remove('filter');
         // get group key
-        var $filterDisplay = $('.filtros-activos')
+        var $filterDisplay = $('.filtros-activos');
 
         var $buttonGroup = $this.parents('.filtro-inside');
+
+
         var group = $buttonGroup.attr('data-filter-group');
 
-        //store filter alue in object
+
+
+        //store filter value in object
         var filterGroup = filters[group];
         // set filter for group
 
@@ -65,6 +95,8 @@ export default {
         }
 
         var index = $.inArray($this.attr('data-filter'), filterGroup);
+
+
         if (!isAll && index === -1) {
           // push filter to group
           filters[group].push($this.attr('data-filter'));
@@ -80,12 +112,14 @@ export default {
         else {
           $this.addClass('active');
         }
-			// let's do some filtering :>
+        // let's do some filtering :>
         var comboFilter = getComboFilter(filters);
         // combine filters
 
+        // //and trigger filter
         $grid.isotope({ filter: comboFilter });
-         // gotta check and set those disabled filters!
+
+        // gotta check and set those disabled filters!
         var $that = $(this);
         // type
         $('button.type:not(.clone)').each(function () {
@@ -197,7 +231,7 @@ export default {
             }
           }
         });
-        // price
+        // date
         $('button.date:not(.clone)').each(function () {
           var $this = $(this);
           var getVal = $this.attr('data-filter');
@@ -239,7 +273,7 @@ export default {
         var cloneId = 0; // because cloning an id attr just wrong :>
         $('button.active').each(function () {
           cloneId++;
-          $(this).clone().appendTo($filterDisplay).attr('id', clone+cloneId).addClass('clone');
+          $(this).clone().appendTo($filterDisplay).attr('id', clone + cloneId).addClass('clone');
         });
 
         $('button.clone').on('click', function () {
@@ -302,9 +336,289 @@ export default {
           && comboFilter.indexOf('place') > 0) {
           $('button.place:not(.clone)').removeClass('disabled');
         }
-      });
 
 
+      }
+      //end cookie filter
+        $('.filtro-inside button').on('click', function () {
+          // exit directly if filter already disabled
+          if ($(this).hasClass('disabled')) {
+            return false;
+          }
+
+
+          var $this = $(this);
+
+          // get group key
+          var $filterDisplay = $('.filtros-activos')
+
+          var $buttonGroup = $this.parents('.filtro-inside');
+
+          var group = $buttonGroup.attr('data-filter-group');
+
+
+
+          //store filter value in object
+          var filterGroup = filters[group];
+          // set filter for group
+
+          if (!filterGroup) {
+            filterGroup = filters[group] = [];
+          }
+          var isAll = $this.hasClass('all');
+          // reset filter group
+          if (isAll) {
+            Array.prototype.remove = function (from, to) {
+              var rest = this.slice((to || from) + 1 || this.length);
+              this.length = from < 0 ? this.length + from : from;
+              return this.push.apply(this, rest);
+            };
+            filters[group].remove(0, -1)
+          }
+
+          var index = $.inArray($this.attr('data-filter'), filterGroup);
+
+
+          if (!isAll && index === -1) {
+            // push filter to group
+            filters[group].push($this.attr('data-filter'));
+          }
+          else if (!isAll) {
+            // remove filter from group
+            filters[group].splice(index, 1);
+          }
+          // class toggling
+          if ($this.hasClass('active')) {
+            $this.removeClass('active');
+          }
+          else {
+            $this.addClass('active');
+          }
+          // let's do some filtering :>
+          var comboFilter = getComboFilter(filters);
+          // combine filters
+
+          $grid.isotope({ filter: comboFilter });
+          // gotta check and set those disabled filters!
+          var $that = $(this);
+          // type
+          $('button.type:not(.clone)').each(function () {
+            var $this = $(this);
+            var getVal = $this.attr('data-filter');
+            var numItems = $('.item-artifact' + getVal + ':not(.isotope-hidden)').length;
+            if (!$(this).hasClass('active') && !$that.hasClass('type')) {
+              if (numItems === 0) {
+                $this.addClass('disabled');
+              }
+              else {
+                $this.removeClass('disabled');
+              }
+            }
+            else if ($this.hasClass('active') && $this.hasClass('disabled')) {
+              $this.removeClass('disabled');
+            }
+            else if (!$(this).hasClass('active')) {
+              if (numItems > 0) {
+                $this.removeClass('disabled');
+              }
+            }
+          });
+          //agency
+          $('button.agency:not(.clone)').each(function () {
+            var $this = $(this);
+            var getVal = $this.attr('data-filter');
+            var numItems = $('.item-artifact' + getVal + ':not(.isotope-hidden)').length;
+            if (!$(this).hasClass('active') && !$that.hasClass('agency')) {
+              if (numItems === 0) {
+                $this.addClass('disabled');
+              }
+              else {
+                $this.removeClass('disabled');
+              }
+            }
+            else if ($this.hasClass('active') && $this.hasClass('disabled')) {
+              $this.removeClass('disabled');
+            }
+            else if (!$(this).hasClass('active')) {
+              if (numItems > 0) {
+                $this.removeClass('disabled');
+              }
+            }
+          });
+          // practice of research
+          $('button.practice:not(.clone)').each(function () {
+            var $this = $(this);
+            var getVal = $this.attr('data-filter');
+            var numItems = $('.item-artifact' + getVal + ':not(.isotope-hidden)').length;
+            if (!$(this).hasClass('active') && !$that.hasClass('practice')) {
+              if (numItems === 0) {
+                $this.addClass('disabled');
+              }
+              else {
+                $this.removeClass('disabled');
+              }
+            }
+            else if ($this.hasClass('active') && $this.hasClass('disabled')) {
+              $this.removeClass('disabled');
+            }
+            else if (!$(this).hasClass('active')) {
+              if (numItems > 0) {
+                $this.removeClass('disabled');
+              }
+            }
+          });
+          // researcher
+          $('button.researcher:not(.clone)').each(function () {
+            var $this = $(this);
+            var getVal = $this.attr('data-filter');
+            var numItems = $('.item-artifact' + getVal + ':not(.isotope-hidden)').length;
+            if (!$(this).hasClass('active') && !$that.hasClass('researcher')) {
+              if (numItems === 0) {
+                $this.addClass('disabled');
+              }
+              else {
+                $this.removeClass('disabled');
+              }
+            }
+            else if ($this.hasClass('active') && $this.hasClass('disabled')) {
+              $this.removeClass('disabled');
+            }
+            else if (!$(this).hasClass('active')) {
+              if (numItems > 0) {
+                $this.removeClass('disabled');
+              }
+            }
+          });
+          // place
+          $('button.place:not(.clone)').each(function () {
+            var $this = $(this);
+            var getVal = $this.attr('data-filter');
+            var numItems = $('.item-artifact' + getVal + ':not(.isotope-hidden)').length;
+            if (!$(this).hasClass('active') && !$that.hasClass('place')) {
+              if (numItems === 0) {
+                $this.addClass('disabled');
+              }
+              else {
+                $this.removeClass('disabled');
+              }
+            }
+            else if ($this.hasClass('active') && $this.hasClass('disabled')) {
+              $this.removeClass('disabled');
+            }
+            else if (!$(this).hasClass('active')) {
+              if (numItems > 0) {
+                $this.removeClass('disabled');
+              }
+            }
+          });
+          // date
+          $('button.date:not(.clone)').each(function () {
+            var $this = $(this);
+            var getVal = $this.attr('data-filter');
+            var numItems = $('.item-artifact' + getVal + ':not(.isotope-hidden)').length;
+            if (!$(this).hasClass('active') && !$that.hasClass('date')) {
+              if (numItems === 0) {
+                $this.addClass('disabled');
+              }
+              else {
+                $this.removeClass('disabled');
+              }
+            }
+            else if ($this.hasClass('active') && $this.hasClass('disabled')) {
+              $this.removeClass('disabled');
+            }
+            else if (!$(this).hasClass('active')) {
+              if (numItems > 0) {
+                $this.removeClass('disabled');
+              }
+            }
+          });
+          // update filter display
+          // eslint-disable-next-line no-unused-vars
+          var arrLbl = [];
+          arrLbl = comboFilter.split('.');
+          // before iterating we empty previous display vals
+          $filterDisplay.empty();
+          // clone method for filter display
+          //display filter by
+          var numItemsHidden = $('.item-artifact.isotope-hidden').length;
+
+          if (numItemsHidden !== 0) {
+            $filterDisplay.append('<p>→ selected filters: </p>')
+          }
+          if (numItemsHidden == 0) {
+            $filterDisplay.empty();
+          }
+          var clone = 'clone';
+          var cloneId = 0; // because cloning an id attr just wrong :>
+          $('button.active').each(function () {
+            cloneId++;
+            $(this).clone().appendTo($filterDisplay).attr('id', clone + cloneId).addClass('clone');
+          });
+
+          $('button.clone').on('click', function () {
+
+            var that = $(this);
+            var parent = that.attr('data-filter');
+
+            $('.filtro-inside').find(parent).each(function () {
+
+              $(this).trigger('click');
+            });
+          });
+          // resolves any outstanding issues with disableds
+          // TODO: Find a way around using indexOf this way. Lots of unneccesary overhead.
+          if (comboFilter.indexOf('type') == -1
+            && comboFilter.indexOf('agency') == -1
+            && comboFilter.indexOf('practice') == -1
+            && comboFilter.indexOf('researcher') == -1
+            && comboFilter.indexOf('place') == -1
+            && comboFilter.indexOf('date') > 0) {
+            $('button.date:not(.clone)').removeClass('disabled');
+          }
+          if (comboFilter.indexOf('date') == -1
+            && comboFilter.indexOf('agency') == -1
+            && comboFilter.indexOf('practice') == -1
+            && comboFilter.indexOf('researcher') == -1
+            && comboFilter.indexOf('place') == -1
+            && comboFilter.indexOf('type') > 0) {
+            $('button.type:not(.clone)').removeClass('disabled');
+          }
+          if (comboFilter.indexOf('date') == -1
+            && comboFilter.indexOf('type') == -1
+            && comboFilter.indexOf('practice') == -1
+            && comboFilter.indexOf('researcher') == -1
+            && comboFilter.indexOf('place') == -1
+            && comboFilter.indexOf('agency') > 0) {
+            $('button.agency:not(.clone)').removeClass('disabled');
+          }
+          if (comboFilter.indexOf('date') == -1
+            && comboFilter.indexOf('agency') == -1
+            && comboFilter.indexOf('type') == -1
+            && comboFilter.indexOf('researcher') == -1
+            && comboFilter.indexOf('place') == -1
+            && comboFilter.indexOf('practice') > 0) {
+            $('button.practice:not(.clone)').removeClass('disabled');
+          }
+          if (comboFilter.indexOf('date') == -1
+            && comboFilter.indexOf('agency') == -1
+            && comboFilter.indexOf('practice') == -1
+            && comboFilter.indexOf('type') == -1
+            && comboFilter.indexOf('place') == -1
+            && comboFilter.indexOf('researcher') > 0) {
+            $('button.researcher:not(.clone)').removeClass('disabled');
+          }
+          if (comboFilter.indexOf('researcher') == -1
+            && comboFilter.indexOf('agency') == -1
+            && comboFilter.indexOf('practice') == -1
+            && comboFilter.indexOf('type') == -1
+            && comboFilter.indexOf('date') == -1
+            && comboFilter.indexOf('place') > 0) {
+            $('button.place:not(.clone)').removeClass('disabled');
+          }
+        });
+
+      // filter items on button click
 
       function getComboFilter(filters) {
         var i = 0;
@@ -393,7 +707,7 @@ export default {
           }
           // $(this).children('.ico-play').addClass('d-none').removeClass('d-block')
 
-          // $(this).children('.ico-pause').addClass('d-block')
+          $(this).children('.ico-pause').addClass('d-block')
 
 
         })

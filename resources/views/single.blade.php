@@ -2,6 +2,12 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    @include('partials.content-single-'.get_post_type())
+  @if (!in_category('events'))
+
+  @include('partials.content-single')
+  @else
+  @include('partials.content-single-evento')
+  @endif
+
   @endwhile
 @endsection

@@ -70,7 +70,7 @@ body.page-template-template-notations-reflections {
   }
 }
 
-body.single {
+body.single:not(.thing) {
   background-color: #222;
 }
 

@@ -99,3 +99,13 @@ return [
 'class' => ''
 ];
 });
+
+add_filter('body_class', function($classes){
+  $posttags = get_the_tags();
+  if ($posttags) {
+  foreach($posttags as $tag) {
+    $classes[] = $tag->name . ' ';
+    }
+  }
+  return $classes;
+});

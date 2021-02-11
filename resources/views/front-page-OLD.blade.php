@@ -23,11 +23,7 @@
     This project aims at developing specific practices of notation and reflection that allows for a comprehensive
     understanding of these agencies and their mutually conditioning relationships.
   </p>
-  {{-- @dump(App::api()) --}}
-  {{-- @foreach (App::api() as $post)
-  {{ $post->data[3]->label }}<br>
-  @endforeach --}}
-
+@include('partials.portfolio-conect-home')
 </div>
 <button class="btn btn-outline-dark ml-auto mr-auto mb-5 mt-5 d-block">
   {{ __('Read more', 'contingentagenciestheme') }}
@@ -44,32 +40,20 @@
 </div>
 <div class="grid row">
   <div class="grid-sizer col-12 col-lg-6"></div>
-
-@foreach (App::api() as $post)
-@if (count($post->media) == 1)
-  @php
-    $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
-  @endphp
-@elseif (count($post->media) >= 2)
-    @php
-    $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
-    @endphp
-@endif
-@if(strcmp($post->data[3]->label, 'keywords') == 0)
-@if (strcmp($post->data[3]->value[0], 'highlighted') == 0)
+  @for ($i = 0; $i < 10; $i++)
   <div class="col-12 col-lg-6 post-home">
-    <a href="{{ $post->data[7]->value }}" class="photo">
-      <img class="img-fluid" src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}">
+    <div class="photo">
+      @if ($i % 2 == 0)
+      <img src="https://picsum.photos/1200/800?ramdom={{ $i }}" alt="" class="img-fluid">
+      @else
+      <img src="https://picsum.photos/950/1300?ramdom={{ $i }}" alt="" class="img-fluid">
+      @endif
       <div class="info-post text-center">
-        <p>{{ $post->data[0]->value }}</p>
-
-
+        <p>N-GANSTERER-20200112-1200-Viena</p>
       </div>
-    </a>
+    </div>
   </div>
-@endif
-@endif
-@endforeach
+  @endfor
 </div>
 
 <button class="btn btn-outline-dark mt-5 ml-auto mr-auto d-block">

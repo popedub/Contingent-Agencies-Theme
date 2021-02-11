@@ -11,41 +11,50 @@
 </div>
 
 @endwhile
+@query([
+  'post_type' => 'post',
+  'category_name' => 'researchers',
+  'posts_per_page' => -1
+
+])
 <div class="row f-lg">
-  <div class="col-12">
-    <div class="link-white">{!! __('↓ research leaders','contingentagenciestheme') !!}</div>
-    <ul class="list">
-      @for ($i = 0; $i < 2; $i++)
-      <li class="d-flex justify-content-between align-items-center">
-        <a href="{{ get_permalink(95) }}"><span class="id pr-3">Nikolaus Gansterer</span></a>
-        <span class="dot flex-grow-1 align-self-end"></span>
-        <span class="end pl-3">Philosopher. Teacher in UDK, Berlin</span>
-      </li>
-      @endfor
-    </ul>
+  @posts
+    @hasfield('leader')
+    <div class="col-12">
 
-
-  </div>
-  <div class="col-12">
-    <div class="link-white">{!! __('↓ contributors','contingentagenciestheme') !!}</div>
+      <div class="link-white">{!! __('↓ research leaders','contingentagenciestheme') !!}</div>
       <ul class="list">
-        @for ($i = 0; $i < 15; $i++)
+
         <li class="d-flex justify-content-between align-items-center">
-          @if ($i % 2 == 0)
-          <span class="id pr-3">Tiago Pina</span>
+          <a href="@permalink"><span class="id pr-3">@title</span></a>
           <span class="dot flex-grow-1 align-self-end"></span>
-          <span class="end pl-3">Philosopher. Teacher in UDK, Berlin</span>
-          @else
-            <span class="id pr-3">Juan Fernando González</span>
-            <span class="dot flex-grow-1 align-self-end"></span>
-            <span class="end pl-3">Dance, Berlin</span>
-          @endif
-          </li>
-          @endfor
+          <span class="end pl-3">@hasfield('profesion')@field('profesion') @endfield</span>
+        </li>
+
       </ul>
-
-
     </div>
+    @endfield
+
+    @if (!get_field('leader'))
+
+
+    <div class="col-12">
+      <div class="link-white">{!! __('↓ contributors','contingentagenciestheme') !!}</div>
+        <ul class="list">
+
+          <li class="d-flex justify-content-between align-items-center">
+
+            <a href="@permalink"><span class="id pr-3">@title</span></a>
+            <span class="dot flex-grow-1 align-self-end"></span>
+            <span class="end pl-3">@hasfield('profesion')@field('profesion') @endfield</span>
+
+
+            </li>
+
+        </ul>
+    </div>
+    @endif
+    @endposts
 </div>
 
 @endsection
