@@ -1,6 +1,6 @@
 <div class="intro">
   {{ Single::api_single()->data[4]->value[0]->value }}
-  @dump()
+
 </div>
 @php
 $img_1024w = json_decode(json_encode(Single::api_single()->media[0]->previews[2]), true);

@@ -31,16 +31,18 @@
 
 @endphp
 
-  @if (strcmp($post->data[0]->value[0], 'R') !== 0 && strcmp($post->data[0]->value[0], 'N') !== 0 )
-    @if (count($post->media) == 1)
-      @php
-        $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
-      @endphp
-    @elseif (count($post->media) >= 2)
-      @php
-        $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
-      @endphp
-    @endif
+  @if (strcmp($post->data[0]->value[0], 'R') !== 0 && strcmp($post->data[0]->value[0], 'N') )
+    @if(strcmp($post->data[3]->label, 'keywords') == 0)
+      @if (strcmp($post->data[3]->value[0], 'thing') == 0)
+        @if (count($post->media) == 1)
+          @php
+            $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
+          @endphp
+        @elseif (count($post->media) >= 2)
+          @php
+            $img_1024w = json_decode(json_encode($post->media[0]->previews[2]), true);
+          @endphp
+        @endif
 
           <div class="col-12 col-lg-6 col-xl-6 item-artifact mb-3">
             <a href="{{ $post->data[7]->value }}" class="photo">
@@ -52,7 +54,8 @@
               </div>
             </a>
           </div>
-
+      @endif
+    @endif
   @endif
 @endforeach
 </div>

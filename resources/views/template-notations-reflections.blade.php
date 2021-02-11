@@ -196,8 +196,18 @@
                                 {{ $year }}
                                 ">
     <a href="{{ $post->data[7]->value }}">
+    {{-- es texto la practica de research --}}
+      @php
+        $text = strtolower($post->data[4]->value[1]->value);
+      @endphp
+    @if (strcmp($text, 'text') == 0)
+        <div class="texto-container gris">
+            {{ App::getExcerpt($post->data[4]->value[5]->value) }}
+
+        </div>
+    @endif
     {{-- solo un medio y es foto --}}
-    @if (count($post->media) == 1 && strcmp($post->media[0]->type, 'i') == 0)
+    @if (count($post->media) == 1 && strcmp($post->media[0]->type, 'i') == 0 && strcmp($text, 'text') !== 0)
     <div class="photo">
       <img class="img-fluid" src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}">
 
@@ -209,7 +219,7 @@
 
     @endif
     {{-- solo tiene 2 fotos, la panoramica y la destacada --}}
-    @if (count($post->media) == 2 && strcmp($post->media[1]->type, 'i') == 0)
+    @if (count($post->media) == 2 && strcmp($post->media[1]->type, 'i') == 0  && strcmp($text, 'text') !== 0)
     <div class="photo">
       <img class="img-fluid" src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}">
 
@@ -236,10 +246,17 @@
     @endif
        {{-- es un video como 3er elemento --}}
     @if (count($post->media) > 2 && strcmp($post->media[2]->type, 'v') == 0)
-      <video src="https://basedev.uni-ak.ac.at{{ $post->media[2]->original }}" width="100%" height="auto" controls>
-        Your browser does not support the <video> element.
-        </video>
+      <div class="photo">
+        <div class="video-container">
+          <img class="img-fluid img-jpg" src="https://basedev.uni-ak.ac.at{{ $post->media[2]->cover->jpg }}">
+          <img class="img-fluid img-gif" src="https://basedev.uni-ak.ac.at{{ $post->media[2]->cover->gif }}">
+          @svg('play-video','ico-video')
+        </div>
+
+
+      </div>
     @endif
+
 
     @endif
     {{-- es foto como 3er adjunto--}}
@@ -270,13 +287,16 @@
 <div class="row grid-list d-none">
   <div class="col-12 item-list">
     <ul class="list">
-      @for ($i = 0; $i < 17; $i++) <li class="d-flex justify-content-between align-items-center">
-        <span class="id pr-3">N-GANSTERER-20200112-1200-Viena</span>
-        <span class="dot flex-grow-1 align-self-end"></span>
-        <span class="end pl-3">Light</span>
+      @foreach (App::api() as $post)
+      @if (strcmp($post->data[0]->value[0], 'R') == 0 || strcmp($post->data[0]->value[0], 'N') == 0 )
+        <li class="d-flex justify-content-between align-items-center">
+          <span class="id pr-3">{{ $post->data[0]->value }}</span>
+          <span class="dot flex-grow-1 align-self-end"></span>
+          <span class="end pl-3">{{ $post->data[4]->value[0]->value }}</span>
         </li>
+      @endif
+      @endforeach
 
-        @endfor
   </div>
   </ul>
 </div>

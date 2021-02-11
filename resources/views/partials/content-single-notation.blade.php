@@ -81,24 +81,29 @@
       <h3>artifacts of notation</h3>
     </div>
     <div class="col-12 col-lg-6 offset-lg-6">
-      {{-- si es x es un audio --}}
-
+      {{-- si es x or a es un audio --}}
       @if (count(Single::api_single()->media) > 2 && Single::api_single()->media[2]->type == 'a')
       <div class="audio-single">
-        <div class="play" data-toggle="tooltip" data-placement="top" title="Preview">
-          @svg('ico-play', 'ico-play')
-        </div>
-
         <audio controls class="audio-test">
           <source src="https://basedev.uni-ak.ac.at{{ Single::api_single()->media[2]->original }}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
       </div>
       @endif
+
       {{-- miramos si es un texto --}}
 
       @if (count(Single::api_single()->data[4]->value) == 6)
         {!! Single::api_single()->data[4]->value[5]->value !!}
+      @endif
+      {{-- miramos si es un video --}}
+      @if (count(Single::api_single()->media) > 2 && Single::api_single()->media[2]->type == 'v')
+      <div class="embed-responsive embed-responsive-16by9">
+        <video width="560" height="315" controls>
+          <source src="https://basedev.uni-ak.ac.at{{ Single::api_single()->media[2]->original }}" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+      </div>
       @endif
       {{-- <div class="embed-responsive embed-responsive-16by9">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Y8x3LWVC1L4" frameborder="0"

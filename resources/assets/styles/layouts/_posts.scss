@@ -226,10 +226,18 @@ body.researchers-single {
     display: block;
   }
 }
+
+//textos
+.texto-container {
+  background-color: $re-negro;
+  color: white;
+  padding: 1rem 1rem 5rem 1rem;
+}
+
 //audios
 .audio-container {
   height: 300px;
-  background-color: $negro;
+  background-color: $re-negro;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,5 +245,45 @@ body.researchers-single {
 
   @include media-breakpoint-up(lg) {
     height: 400px;
+  }
+}
+
+//videos
+.video-container {
+  position: relative;
+  cursor: pointer;
+
+  .img-jpg {
+    opacity: 1;
+  }
+
+  .img-gif {
+    display: none;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    .img-jpg {
+      display: none;
+      opacity: 0;
+    }
+
+    .img-gif {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  img {
+    display: block;
+    min-width: 100%;
+  }
+
+  .ico-video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
