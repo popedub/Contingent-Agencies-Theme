@@ -84,10 +84,49 @@
       {{-- si es x or a es un audio --}}
       @if (count(Single::api_single()->media) > 2 && Single::api_single()->media[2]->type == 'a')
       <div class="audio-single">
-        <audio controls class="audio-test">
+        {{-- @svg('play-video','play-audio')
+        @svg('ico-pause','pause-audio d-none') --}}
+        <audio id="player" class="audio-test">
           <source src="https://basedev.uni-ak.ac.at{{ Single::api_single()->media[2]->original }}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
+        {{-- <div class="player-controls scrubber">
+
+              <span id="seekObjContainer">
+                <progress id="seekObj" value="0" max="1"></progress>
+              </span>
+              <br>
+              <small style="float: left; position: relative; left: 15px;" class="start-time"></small>
+              <small style="float: right; position: relative; right: 20px;" class="end-time"></small>
+
+          </div> --}}
+
+        <div id="audio_src" class="d-none">https://basedev.uni-ak.ac.at{{ Single::api_single()->media[2]->original }}</div>
+        <div class="player-ca d-flex align-items-center justify-content-between">
+          {{-- @svg('play-video','play-audio')
+          @svg('ico-pause','pause-audio d-none') --}}
+        <div class="control-container">
+          <div class="amplitude-play-pause" id="play-pause"></div>
+          <div class="meta-container">
+            <span data-amplitude-song-info="name" class="song-name"></span>
+            <span data-amplitude-song-info="artist"></span>
+          </div>
+        </div>
+          <div class="bottom-container">
+            <div class="song-navigation d-flex">
+              <span class="current-time mr-3">
+                <span class="amplitude-current-minutes"></span>:<span class="amplitude-current-seconds"></span>
+              </span>
+
+              <input type="range" class="amplitude-song-slider" />
+
+              <span class="duration ml-3">
+                  <span class="amplitude-duration-minutes"></span>:<span class="amplitude-duration-seconds"></span>
+              </span>
+            </div>
+
+
+        </div>
       </div>
       @endif
 
@@ -98,17 +137,15 @@
       @endif
       {{-- miramos si es un video --}}
       @if (count(Single::api_single()->media) > 2 && Single::api_single()->media[2]->type == 'v')
-      <div class="embed-responsive embed-responsive-16by9">
-        <video width="560" height="315" controls>
+
+        <video class="video-js video-ca vjs-fluid">
           <source src="https://basedev.uni-ak.ac.at{{ Single::api_single()->media[2]->original }}" type="video/mp4">
             Your browser does not support the video element.
         </video>
-      </div>
+
       @endif
-      {{-- <div class="embed-responsive embed-responsive-16by9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Y8x3LWVC1L4" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div> --}}
+
     </div>
   </div>
 </section>
+

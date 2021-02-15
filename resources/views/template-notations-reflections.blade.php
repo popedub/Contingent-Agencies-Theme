@@ -195,7 +195,8 @@
                                 {{ strtolower($place) }}
                                 {{ $year }}
                                 ">
-    <a href="{{ $post->data[7]->value }}">
+    {{-- <a href="{{ $post->data[7]->value }}"> --}}
+     <a href="http://localhost:8888/contingentagencies/{{ $post->data[0]->value }}">
     {{-- es texto la practica de research --}}
       @php
         $text = strtolower($post->data[4]->value[1]->value);

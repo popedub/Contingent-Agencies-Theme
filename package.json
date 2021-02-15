@@ -76,8 +76,10 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
+    "amplitudejs": "^5.2.0",
     "bootstrap": "v4.3.1",
     "feather-icons": "^4.28.0",
+    "html5-slider": "^2.1.4",
     "imagesloaded": "^4.1.4",
     "infinite-scroll": "^3.0.6",
     "isotope-layout": "^3.0.6",
@@ -87,6 +89,7 @@
     "js-cookie": "^2.2.1",
     "lightgallery": "^1.8.3",
     "masonry-layout": "^4.2.2",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.14.7",
+    "video.js": "^7.11.4"
   }
 }

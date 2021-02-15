@@ -7,6 +7,7 @@ import 'jquery-typeahead/dist/jquery.typeahead.min';
 import 'jquery-highlight/jquery.highlight';
 import 'isotope-layout/dist/isotope.pkgd';
 import 'lightgallery/dist/js/lightgallery-all.js';
+import 'html5-slider/dist/jquery.slider-standalone';
 
 // Import everything from autoload
 import './autoload/**/*'
@@ -20,6 +21,7 @@ import notationsReflections from './routes/notations-reflections';
 import things from './routes/things';
 import researchCells from './routes/research-cells';
 import category from './routes/category';
+import single from './routes/single';
 import architectureAndAtmosphere from './routes/architecture-and-atmosphere';
 import conceptualFramework from './routes/conceptual-framework';
 
@@ -35,6 +37,7 @@ const routes = new Router({
   things,
   researchCells,
   category,
+  single,
   architectureAndAtmosphere,
   conceptualFramework,
 });

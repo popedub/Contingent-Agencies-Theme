@@ -58,7 +58,8 @@
 @if(strcmp($post->data[3]->label, 'keywords') == 0)
 @if (strcmp($post->data[3]->value[0], 'highlighted') == 0)
   <div class="col-12 col-lg-6 post-home">
-    <a href="{{ $post->data[7]->value }}" class="photo">
+    {{-- <a href="{{ $post->data[7]->value }}" class="photo"> --}}
+    <a href="http://localhost:8888/contingentagencies/{{ $post->data[0]->value }}" class="photo">
       <img class="img-fluid" src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}">
       <div class="info-post text-center">
         <p>{{ $post->data[0]->value }}</p>
