@@ -25,7 +25,7 @@
       <div class="link-white">{!! __('↓ research leaders','contingentagenciestheme') !!}</div>
       <ul class="list">
 
-        <li class="d-flex justify-content-between align-items-center">
+        <li class="d-block d-lg-flex justify-content-between align-items-center">
           <a href="@permalink"><span class="id pr-3">@title</span></a>
           <span class="dot flex-grow-1 align-self-end"></span>
           <span class="end pl-3">@hasfield('profesion')@field('profesion') @endfield</span>
@@ -42,7 +42,7 @@
       <div class="link-white">{!! __('↓ contributors','contingentagenciestheme') !!}</div>
         <ul class="list">
 
-          <li class="d-flex justify-content-between align-items-center">
+          <li class="d-block d-lg-flex justify-content-between align-items-center">
 
             <a href="@permalink"><span class="id pr-3">@title</span></a>
             <span class="dot flex-grow-1 align-self-end"></span>

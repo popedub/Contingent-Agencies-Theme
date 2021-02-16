@@ -2,15 +2,21 @@ import  Amplitude from 'amplitudejs/dist/amplitude';
 import videojs from 'video.js/dist/video';
 export default {
   init() {
+    var video = $('.video-js');
 
-    videojs(document.querySelector('.video-js'),{
-      controls: true,
-      autoplay: false,
-      preload: 'auto',
-    });
+    if(video.length > 0){
+      videojs(document.querySelector('.video-js'), {
+        controls: true,
+        autoplay: false,
+        preload: 'auto',
+      });
+    }
+
 
     var play = $('.play-audio');
-    if (play) {
+    var divaudio = $('.audio-single');
+
+    if (divaudio.length > 0) {
       // eslint-disable-next-line no-unused-vars
       var audio = $('#audio_src').text();
       var pause = $('.pause-audio');

@@ -50,15 +50,15 @@ div.control-container {
 }
 
 div.control-container div.amplitude-play-pause {
-  width: 74px;
-  height: 74px;
+  width: 52px;
+  height: 52px;
   cursor: pointer;
   float: left;
   margin-left: 10px;
 }
 
 div.control-container div.amplitude-play-pause.amplitude-paused {
-  background: url("./assets/svg/play-video.svg");
+  background: url("./assets/svg/ico-play-byn.svg");
   background-size: cover;
 }
 
@@ -146,32 +146,6 @@ div.time-container span.duration {
 /*
   Large Only
 */
-progress.amplitude-song-played-progress {
-  background-color: #313252;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 5px;
-  display: block;
-  cursor: pointer;
-  border: none;
-}
-
-progress.amplitude-song-played-progress:not([value]) {
-  background-color: #313252;
-}
-
-progress[value]::-webkit-progress-bar {
-  background-color: #313252;
-}
-
-progress[value]::-moz-progress-bar {
-  background-color: #00a0ff;
-}
-
-progress[value]::-webkit-progress-value {
-  background-color: #00a0ff;
-}
 
 div.song-navigation input[type="range"] {
   width: 90%;
@@ -193,10 +167,11 @@ div.song-navigation input[type="range"]::-webkit-slider-runnable-track {
   background: rgba(255, 255, 255, 0.25);
 }
 div.song-navigation input[type="range"]::-webkit-slider-thumb {
-  width: 28px;
-  height: 28px;
+  width: 14px;
+  height: 14px;
   background-color: white;
-  border-radius: 20px;
+  border-color: white;
+  border-radius: 50%;
   -webkit-appearance: none;
   margin-top: -10px;
 }
@@ -208,10 +183,11 @@ div.song-navigation input[type="range"]::-moz-range-track {
   background: rgba(255, 255, 255, 0.25);
 }
 div.song-navigation input[type="range"]::-moz-range-thumb {
-  width: 28px;
-  height: 28px;
+  width: 14px;
+  height: 14px;
   background-color: white;
-  border-radius: 20px;
+  border-color: white;
+  border-radius: 50%;
   -webkit-appearance: none;
   margin-top: -10px;
 }
@@ -229,10 +205,11 @@ div.song-navigation input[type="range"]::-ms-fill-upper {
   background: transparent;
 }
 div.song-navigation input[type="range"]::-ms-thumb {
-  width: 28px;
-  height: 28px;
+  width: 14px;
+  height: 14px;
   background-color: white;
-  border-radius: 20px;
+  border-color: white;
+  border-radius: 50%;
   -webkit-appearance: none;
   margin-top: -10px;
 }
@@ -300,8 +277,14 @@ div#single-song-player {
 
   .vjs-icon-placeholder {
     &:before {
-      content: url("./assets/svg/play-video.svg");
+      content: "";
       position: relative;
+      display: block;
+      width: 65px;
+      height: 65px;
+      background-image: url("./assets/svg/ico-play-byn.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     &:hover {

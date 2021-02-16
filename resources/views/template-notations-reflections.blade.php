@@ -8,6 +8,10 @@
 @while(have_posts()) @php the_post() @endphp
 <div class="intro">
   @include('partials.content-page')
+  <div>
+<span class="read-more">→ </span><a class="link-read" href="">Read more</a>
+  </div>
+
 {{-- @dump(App::api()) --}}
   @foreach (App::api() as $post)
 
@@ -187,7 +191,7 @@
   $place = str_replace(array(',', ' '),array('','-'), $post->data[6]->value[0][2]->value[0]);
   $year = substr($post->data[6]->value[0][0]->value->from, 0, 4);
   @endphp
-  <div class="col-12 col-lg-4 item-artifact mb-4
+  <div class="col-12 col-lg-4 item-artifact mb-3 mb-lg-4
                                 {{ strtolower($post->data[2]->value) }}
                                 {{ strtolower($agency) }}
                                 {{ strtolower($practice) }}
@@ -195,8 +199,8 @@
                                 {{ strtolower($place) }}
                                 {{ $year }}
                                 ">
-    {{-- <a href="{{ $post->data[7]->value }}"> --}}
-     <a href="http://localhost:8888/contingentagencies/{{ $post->data[0]->value }}">
+    <a href="{{ $post->data[7]->value }}">
+     {{-- <a href="http://localhost:8888/contingentagencies/{{ $post->data[0]->value }}"> --}}
     {{-- es texto la practica de research --}}
       @php
         $text = strtolower($post->data[4]->value[1]->value);

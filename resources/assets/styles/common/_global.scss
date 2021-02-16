@@ -13,8 +13,11 @@ html {
 
 body {
   background-color: $gris;
-  padding: 15px;
   font-family: "Scto Grotesk", Arial, Helvetica, sans-serif;
+
+  @include media-breakpoint-up(lg) {
+    padding: 15px;
+  }
 }
 
 @font-face {
@@ -42,6 +45,7 @@ h2 {
 }
 
 .link-white,
+.white,
 .active {
   color: white;
 }
@@ -57,6 +61,8 @@ h2 {
 // }
 
 body .wrap {
+  margin-top: 55px;
+
   @include media-breakpoint-up(lg) {
     margin-top: 75px;
   }

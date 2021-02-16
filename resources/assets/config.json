@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/wp-content/themes/contingentagenciestheme",
-  "devUrl": "http://localhost:8888/contingentagencies",
+  "devUrl": "https://agencies.todojunto.net/contingentagencies",
   "proxyUrl": "http://localhost:3000/contingentagencies",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

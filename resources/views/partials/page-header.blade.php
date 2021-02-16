@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page-header d-none d-lg-block">
   @if (is_single() && !in_category(array('researchers', 'events')))
     @if (strcmp(Single::api_single()->data[3]->label, 'keywords') == 0)
       @if (strcmp(Single::api_single()->data[3]->value[0], 'thing') == 0)

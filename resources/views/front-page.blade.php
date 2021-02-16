@@ -27,11 +27,14 @@
   {{-- @foreach (App::api() as $post)
   {{ $post->data[3]->label }}<br>
   @endforeach --}}
+  <div class="text-center">
+    <a href="@permalink(9)" class="btn btn-outline-dark ml-auto mr-auto mb-5 mt-5">
+      {{ __('Read more', 'contingentagenciestheme') }}
+    </a>
+  </div>
 
 </div>
-<button class="btn btn-outline-dark ml-auto mr-auto mb-5 mt-5 d-block">
-  {{ __('Read more', 'contingentagenciestheme') }}
-</button>
+
 
 <div class="row">
   <div class="col-12">
@@ -58,8 +61,8 @@
 @if(strcmp($post->data[3]->label, 'keywords') == 0)
 @if (strcmp($post->data[3]->value[0], 'highlighted') == 0)
   <div class="col-12 col-lg-6 post-home">
-    {{-- <a href="{{ $post->data[7]->value }}" class="photo"> --}}
-    <a href="http://localhost:8888/contingentagencies/{{ $post->data[0]->value }}" class="photo">
+    <a href="{{ $post->data[7]->value }}" class="photo">
+    {{-- <a href="http://localhost:8888/contingentagencies/{{ $post->data[0]->value }}" class="photo"> --}}
       <img class="img-fluid" src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}">
       <div class="info-post text-center">
         <p>{{ $post->data[0]->value }}</p>
@@ -72,10 +75,12 @@
 @endif
 @endforeach
 </div>
-
-<button class="btn btn-outline-dark mt-5 ml-auto mr-auto d-block">
+<div class="text-center">
+<a href="@permalink(11)" class="btn btn-outline-dark mt-5 ml-auto mr-auto">
   {{ __('View all', 'contingentagenciestheme') }}
-</button>
+</a>
+</div>
+
 
 
 @while (have_posts()) @php the_post() @endphp
@@ -95,11 +100,11 @@
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            <div class="foto-modal col-5 d-block" style="background-image: url('@thumbnail('full', false)'">
+            <div class="foto-modal col-12 col-lg-5 d-block" style="background-image: url('@thumbnail('full', false)'">
 
             </div>
 
-            <div class="info-modal col-7">
+            <div class="info-modal col-12 col-lg-7">
               <div class="top">
                 <h3 class="entry-title">@title</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">

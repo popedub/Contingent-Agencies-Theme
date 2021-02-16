@@ -2,7 +2,7 @@
   <div class="row conceptual">
     <div class="col-12 col-lg-6">
 
-      <img src="@thumbnail('full', false)" alt="" class="img-fluid">
+      <img src="@thumbnail('full', false)" alt="" class="img-fluid mb-4">
     </div>
     <div class="col-12 col-lg-6">
       @field('bio')
@@ -46,10 +46,12 @@
             @endif
         @endforeach
       </ul>
-
-      <button class="btn btn-outline-light mt-5 ml-auto mr-auto d-block">
+      <div class="text-center">
+      <a href="@permalink(17)" class="btn btn-outline-light mt-5 ml-auto mr-auto">
         {{ __('View all researchers', 'contingentagenciestheme') }}
-      </button>
+      </a>
+      </div>
+
     </div>
   </div>
 </section>

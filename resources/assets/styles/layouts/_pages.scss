@@ -36,18 +36,27 @@ body.home {
 }
 
 .post-home {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 30px;
+  }
 }
 
 .photo-home {
   width: 100%;
-  height: 40vw;
+  height: 50vw;
   display: block;
   position: absolute;
-  top: 90px;
+  top: 55px;
   left: 0;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @include media-breakpoint-up(lg) {
+    height: 40vw;
+    top: 90px;
+  }
 
   @include media-breakpoint-up(xl) {
     height: 52vw;
@@ -95,7 +104,11 @@ body.home {
 }
 
 .title {
-  margin-top: 200px;
+  margin-top: 0;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 200px;
+  }
 }
 
 //modal home
@@ -203,9 +216,12 @@ body.home {
 }
 
 #grupo {
-  margin-top: -20px;
   border-top: 1px dashed black;
   border-bottom: 1px dashed black;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: -20px;
+  }
 }
 
 .list-group {
@@ -215,15 +231,25 @@ body.home {
 }
 
 .list-group-item {
-  padding: 0.75rem 2.5rem 0.75rem 0.25rem;
+  padding: 0.75rem 2.5rem 1.75rem 0.25rem;
   background-color: transparent;
   border: none;
-  text-align: center;
+  text-align: left;
   font-size: 0.8rem;
   color: black;
-  display: inline;
-  margin-right: 20px;
+  float: left;
   line-height: 1.5;
+  margin-bottom: 20px;
+  width: auto;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0.75rem 2.5rem 0.75rem 0.25rem;
+    display: inline;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 0;
+    float: none;
+  }
 
   @include media-breakpoint-up(xxl) {
     padding-right: 5.5rem;
@@ -244,6 +270,13 @@ body.home {
 
 .list-group-horizontal .list-group-item:first-child {
   text-align: left;
+  display: block;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    display: inline;
+    width: auto;
+  }
 }
 
 .list-group-horizontal .list-group-item:last-child {
@@ -275,11 +308,13 @@ body.home {
   border-bottom: 1px dashed white;
   margin-bottom: 13px;
 }
+
 //things
 
 //concepatual framework
 .conceptual {
   padding-top: 30px;
+  padding-bottom: 30px;
 
   @include media-breakpoint-up(lg) {
     padding-top: 100px; //para things ojo con que no sea diferente en todas las páginas

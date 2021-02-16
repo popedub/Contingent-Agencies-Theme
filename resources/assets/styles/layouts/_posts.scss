@@ -20,8 +20,10 @@ body.category {
 
   .entry-title,
   .entry-summary {
-    padding-right: 30px;
-    padding-left: 30px;
+    @include media-breakpoint-up(lg) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
   }
 
   h2 {
@@ -40,34 +42,36 @@ body.single {
     @extend .row;
 
     background-color: $gris;
-    margin-left: -30px;
-    margin-right: -30px;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
 
     header {
-      padding-top: 100px;
+      @include media-breakpoint-up(lg) {
+        padding-top: 100px;
+      }
     }
   }
 
   .date {
-    padding-right: 30px;
-    padding-left: 30px;
-
     @include media-breakpoint-up(lg) {
       font-size: 2rem;
       font-weight: 400;
+      padding-right: 30px;
+      padding-left: 30px;
     }
   }
 
   .quote {
-    padding-right: 30px;
-    padding-left: 30px;
-
     @include media-breakpoint-up(lg) {
-      padding-right: 30%;
       font-size: 2rem;
       line-height: 1.3;
       padding-top: 4.5rem;
+      padding-right: 30%;
       padding-bottom: 3.5rem;
+      padding-left: 30px;
     }
   }
 
@@ -82,19 +86,25 @@ body.single {
   }
 
   .entry-content {
-    padding-right: 30px;
-    padding-left: 30px;
     font-size: 1.125rem;
     line-height: 1.3;
     padding-bottom: 120px;
+
+    @include media-breakpoint-up(lg) {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
   }
 
   article.event-completed {
-    margin-left: -30px;
-    margin-right: -30px;
     padding-top: 40px;
     color: white;
     background-color: #222;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
   }
 }
 
@@ -125,9 +135,14 @@ body.single {
 }
 
 body.template-notation,
+body.notation,
 body.researchers-single {
   section.gris {
     background-color: $gris;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-right: 15px;
+    padding-left: 15px;
 
     @include media-breakpoint-up(lg) {
       margin-right: -30px;
@@ -150,7 +165,7 @@ body.researchers-single {
   }
 
   .main {
-    a {
+    a:not(.btn) {
       border-bottom: 1px solid black;
       transition: border-bottom 0.3s ease-in-out;
 

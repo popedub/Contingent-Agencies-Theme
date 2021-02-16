@@ -16,7 +16,7 @@
   <div class="row mt-3">
     <div class="col-12 col-lg-6">
       {{-- @dump(Single::api_single()) --}}
-      <p class="link-white mb-0">↓ Identifier: {{ Single::api_single()->data[0]->value }}</p>
+      <p class="white mb-0">↓ Identifier: {{ Single::api_single()->data[0]->value }}</p>
       <ul class="list">
 
         <li>Agency: <a href="{{ get_permalink(11) }}" class="filter-cookie agency">{{ Single::api_single()->data[4]->value[0]->value }}</a></li>
@@ -31,7 +31,7 @@
     </div>
     <div class="col-12 col-lg-6 lg-fire">
       {{-- hay 2 imagenes, una destacada en la home en la posicion 1 y la panoramica en la posicion 0 --}}
-      <a data-src="https://basedev.uni-ak.ac.at{{ Single::api_single()->media[0]->original }}"
+      <a data-src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}"
         data-sub-html="{{ Single::api_single()->data[0]->value }}">
         <img class="img-fluid" src="https://basedev.uni-ak.ac.at{{ $img_1024w['1024w'] }}">
       </a>
@@ -45,18 +45,18 @@
       </div>
     </div>
     <div class="col-12 col-lg-6">
-      <p class="link-white mb-0">↓ Short description of the atmosphere</p>
+      <p class="white mb-0">↓ Short description of the atmosphere</p>
       <p>{{ Single::api_single()->data[4]->value[3]->value }} </p>
 
     </div>
     <div class="col-12 col-lg-6">
-      <p class="link-white mb-0">↓ strategies of display</p>
+      <p class="white mb-0">↓ strategies of display</p>
       <p>{{ Single::api_single()->data[4]->value[2]->value }}</p>
     </div>
     <div class="col-12 col-lg-6">
       <div class="d-flex">
         <div>
-          <p class="link-white mb-0">↓ related reflections</p>
+          <p class="white mb-0">↓ related reflections</p>
           <ul class="list">
             <li><a href="#">R-Gomez-20191102-0600-Bogota</a></li>
             <li><a href="#">R-Gansterer-20200113-1200-Vienna</a></li>
@@ -64,7 +64,7 @@
           </ul>
         </div>
         <div class="pl-5">
-          <p class="link-white mb-0">↓ research cells</p>
+          <p class="white mb-0">↓ research cells</p>
           <ul class="list">
             <li><a href="#">Environment and atmosphere</a></li>
             <li><a href="#">Acustics</a></li>
@@ -90,16 +90,7 @@
           <source src="https://basedev.uni-ak.ac.at{{ Single::api_single()->media[2]->original }}" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
-        {{-- <div class="player-controls scrubber">
 
-              <span id="seekObjContainer">
-                <progress id="seekObj" value="0" max="1"></progress>
-              </span>
-              <br>
-              <small style="float: left; position: relative; left: 15px;" class="start-time"></small>
-              <small style="float: right; position: relative; right: 20px;" class="end-time"></small>
-
-          </div> --}}
 
         <div id="audio_src" class="d-none">https://basedev.uni-ak.ac.at{{ Single::api_single()->media[2]->original }}</div>
         <div class="player-ca d-flex align-items-center justify-content-between">
